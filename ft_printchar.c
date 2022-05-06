@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 13:47:37 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:52:29 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/06 13:48:40 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/06 13:53:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_printchar(t_io *io, t_mod *mods)
 {
-	int	i;
+	char	c;
 
-	i = 0;
-	while (s[i])
-	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *) s + i);
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *) s + i);
+	if (mods->conspec == '%')
+		c = '%';
 	else
-		return (NULL);
+		c = (char) va_arg(io->ap, int);
+	if (mods-> width > 1)
+		mods->pads = mods->width - 1;
+	if (!mods->leftadj && mods->pads)
+		ft_pad(io, mods);
+	io->nprinted += write(1, &c, 1);
+	if (mods->leftadj && mods->pads)
+		ft_pad(io, mods);
 }

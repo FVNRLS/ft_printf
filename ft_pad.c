@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_pad.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 13:47:37 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:52:29 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/06 13:48:29 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/06 13:52:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_pad(t_io *io, t_mod *mods)
 {
-	int	i;
+	char	c;
 
-	i = 0;
-	while (s[i])
-	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *) s + i);
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *) s + i);
+	if (mods->zeropad && !mods->leftadj)
+		c = '0';
 	else
-		return (NULL);
+		c = ' ';
+	while (mods->pads)
+	{
+		io->nprinted += write(1, &c, 1);
+		mods->pads--;
+	}
 }
