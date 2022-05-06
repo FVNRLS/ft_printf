@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:40 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:53:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:31:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_printchar(t_io *io, t_mod *mods)
 	if (mods->conspec == '%')
 		c = '%';
 	else
-		c = (char) va_arg(io->ap, int);
+		c = (char) va_arg(io->arg, int);
 	if (mods-> width > 1)
 		mods->pads = mods->width - 1;
 	if (!mods->leftadj && mods->pads)

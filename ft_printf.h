@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/06 13:51:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:26:01 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_mod
 typedef struct s_io
 {
 	const char	*format;
-	va_list		ap;
+	va_list		arg;
 	size_t		nprinted;
 	size_t		pos;
 }				t_io;

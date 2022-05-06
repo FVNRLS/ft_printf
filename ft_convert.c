@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:04 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:52:43 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:28:05 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_convert(t_io *io, t_mod *mods)
 		ft_printint(io, mods);
 	else if (mods->conspec == 'u' || mods->conspec == 'x'
 		|| mods->conspec == 'X')
-		ft_printnbr(io, mods, (unsigned long int) va_arg(io->ap, unsigned int));
+		ft_printnbr(io, mods, (unsigned long int) va_arg(io->arg, unsigned int));
 	else
-		ft_printnbr(io, mods, va_arg(io->ap, unsigned long int));
+		ft_printnbr(io, mods, va_arg(io->arg, unsigned long int));
 }

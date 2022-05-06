@@ -6,18 +6,18 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:53:00 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:41:56 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static const char	*g_allsymbols = "cspdiouxX%%#-+ .*0123456789";
-static const char	*g_conspecs = "cspdiouxX%%";
-static const char	*g_mods = "#-+ .*0123456789";
-
 void	ft_parse(t_io *io, t_mod *mods)
 {
+	const char	*g_allsymbols = "cspdiouxX%%#-+ .*0123456789";
+	const char	*g_conspecs = "cspdiouxX%%";
+	const char	*g_mods = "#-+ .*0123456789";
+
 	while (io->format[io->pos])
 	{
 		if (io->format[io->pos] != '%')

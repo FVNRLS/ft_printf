@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:49:28 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:49:32 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:28:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_printstr(t_io *io, t_mod *mods)
 	char	*s;
 	size_t	i;
 
-	s = va_arg(io->ap, char *);
+	s = va_arg(io->arg, char *);
 	if (s == NULL)
 		s = "(null)";
 	len = ft_strlen(s);

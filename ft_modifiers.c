@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:22 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:52:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:28:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_zeroisflag(t_io *io)
 static void	ft_width(t_io *io, t_mod *mods)
 {
 	if (io->format[io->pos] == '*')
-		mods->width = va_arg(io->ap, int);
+		mods->width = va_arg(io->arg, int);
 	else if (io->format[io->pos - 1] == '0' && ft_zeroisflag(io))
 		mods->width = io->format[io->pos] - '0';
 	else if (!ft_isdigit(io->format[io->pos - 1]))
@@ -40,7 +40,7 @@ static void	ft_precision(t_io *io, t_mod *mods)
 {
 	if (io->format[io->pos] == '*')
 	{
-		mods->precision = va_arg(io->ap, int);
+		mods->precision = va_arg(io->arg, int);
 		mods->adj_precision = 0;
 		return ;
 	}
