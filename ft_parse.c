@@ -6,34 +6,32 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 15:41:56 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:11:18 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_parse(t_io *io, t_mod *mods)
+void	ft_parse(t_input *input, t_mod *mods)
 {
-	const char	*g_allsymbols = "cspdiouxX%%#-+ .*0123456789";
-	const char	*g_conspecs = "cspdiouxX%%";
-	const char	*g_mods = "#-+ .*0123456789";
+	
 
-	while (io->format[io->pos])
+	while (input->format[input->pos])
 	{
-		if (io->format[io->pos] != '%')
-			io->nprinted += write(1, io->format + io->pos, 1);
-		else if (ft_strchr(g_allsymbols, io->format[io->pos + 1]))
+		if (input->format[input->pos] != '%') //if input on pos is not % sign -- write it
+			input->ret_nbr += write(1, input->format + input->pos, 1);
+		else if (ft_strchr(ALL_SYMBOLS, input->format[input->pos + 1])) //if next char is in mod/specs list - start to convert
 		{
-			io->pos++;
-			while (ft_strchr(g_mods, io->format[io->pos]))
+			input->pos++;
+			while (ft_strchr(FORM_MODS, input->format[input->pos])) //firstly search for mods
 			{
-				ft_modifiers(io, mods);
-				io->pos++;
+				ft_modifiers(input, mods); //if found - change the mod flag
+				input->pos++;
 			}
-			if (ft_strchr(g_conspecs, io->format[io->pos]))
-				ft_convert(io, mods);
+			if (ft_strchr(FORM_SPECS, input->format[input->pos])) //then convert and apply the mods
+				ft_convert(input, mods);
 			ft_initmods(mods);
 		}
-		io->pos++;
+		input->pos++; //move to the next pos
 	}
 }

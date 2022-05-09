@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/06 15:26:01 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:02:48 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "libft/libft.h"
+# include "tools.h"
+
+# define ALL_SYMBOLS	"cspdiouxX%%#-+ .*0123456789"
+# define FORM_SPECS		"cspdiouxX%%"
+# define FORM_MODS		"#-+ .*0123456789"
 
 typedef struct s_mod
 {
 	int		altform;
 	int		zeropad;
-	int		leftadj;
+	int		adj_left;
 	int		space;
 	int		plus;
 	int		width;
@@ -32,24 +36,17 @@ typedef struct s_mod
 	int		pads;
 }			t_mod;
 
-typedef struct s_io
+typedef struct s_input
 {
 	const char	*format;
 	va_list		arg;
-	size_t		nprinted;
+	size_t		ret_nbr;
 	size_t		pos;
-}				t_io;
+}				t_input;
 
 int		ft_printf(const char *format, ...);
-void	ft_initmods(t_mod *mods);
-void	ft_parse(t_io *io, t_mod *mods);
-void	ft_modifiers(t_io *io, t_mod *mods);
-void	ft_convert(t_io *io, t_mod *mods);
-void	ft_printchar(t_io *io, t_mod *mods);
-void	ft_pad(t_io *io, t_mod *mods);
-void	ft_printstr(t_io *io, t_mod *mods);
-void	ft_printint(t_io *io, t_mod *mods);
-void	ft_printnbr(t_io *io, t_mod *mods, unsigned long int nbr);
-void	ft_putnbrpf(t_io *io, t_mod *mods, unsigned long int nbr);
+void	ft_init_mods(t_mod *mods);
+void	ft_parse(t_input *input, t_mod *mods);
+void	ft_convert(t_input *input, t_mod *mods);
 
 #endif

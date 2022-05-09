@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:04 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 15:28:05 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/09 12:55:37 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ void	ft_adjustmods(t_mod *mods)
 		mods->zeropad = 0;
 }
 
-void	ft_convert(t_io *io, t_mod *mods)
+void	ft_convert(t_input *input, t_mod *mods)
 {
-	mods->conspec = io->format[io->pos];
+	mods->conspec = input->format[input->pos];
 	ft_adjustmods(mods);
 	if (mods->conspec == 'c' || mods->conspec == '%')
-		ft_printchar(io, mods);
+		ft_printchar(input, mods);
 	else if (mods->conspec == 's')
-		ft_printstr(io, mods);
+		ft_printstr(input, mods);
 	else if (mods->conspec == 'i' || mods->conspec == 'd')
-		ft_printint(io, mods);
+		ft_printint(input, mods);
 	else if (mods->conspec == 'u' || mods->conspec == 'x'
 		|| mods->conspec == 'X')
-		ft_printnbr(io, mods, (unsigned long int) va_arg(io->arg, unsigned int));
+		ft_printnbr(input, mods, (unsigned long int) va_arg(input->arg, unsigned int));
 	else
-		ft_printnbr(io, mods, va_arg(io->arg, unsigned long int));
+		ft_printnbr(input, mods, va_arg(input->arg, unsigned long int));
 }
