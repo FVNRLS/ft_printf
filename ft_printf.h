@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/09 14:23:38 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:05:09 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "tools.h"
+# include <unistd.h>
+# include <stdlib.h>
 
 # define ALL_SYMBOLS	"cspdiouxX%%#-+ .*0123456789"
 # define FORM_SPECS		"cspdiouxX%%"
@@ -22,18 +23,16 @@
 
 typedef struct s_mod
 {
-	int		zeropad;
-	int		width;
-	int		adj_precision;
+	int		zero;
 	int		plus;
-	int		adj_left;
+	int		minus;
 	int		space;
-	int		altform;
-	
+	int		hash;
+	int		width;
 	int		precision;
-	char	conspec;
-	int		base;
-	int		putminus;
+	
+	char	spec; //format spec
+	
 	int		pads;
 }			t_mod;
 
@@ -45,10 +44,23 @@ typedef struct s_input
 	size_t		pos;
 }				t_input;
 
+//INIT AND PARSING
 int		ft_printf(const char *format, ...);
 void	ft_init_mods(t_mod *mods);
 void	ft_parse(t_input *input, t_mod *mods);
-void	ft_convert(t_input *input, t_mod *mods);
 void	ft_check_mods(t_input *input, t_mod *mods);
+
+//CONVERSIONS
+void	ft_convert(t_input *input, t_mod *mods);
+void	ft_printchar(t_input *input, t_mod *mods);
+void	ft_printstr(t_input *input, t_mod *mods);
+
+//TOOLS
+int		ft_isdigit(int c);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+void	ft_putstr(char *str, t_input *input);
+void	ft_print_pads(t_input *input, t_mod *mods);
+void	ft_print_zeropads(t_input *input, t_mod *mods);
 
 #endif

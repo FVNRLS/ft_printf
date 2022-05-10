@@ -6,11 +6,11 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:47:37 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/06 13:52:29 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:57:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
 {

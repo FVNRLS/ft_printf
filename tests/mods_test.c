@@ -39,7 +39,6 @@ int	main(void)
 	printf("\n\n\n\n\n\n\n---------------------- 		NON-DIGIT FORMAT SPECS 		----------------------\n\n");
 	////////
 	printf("\n********************** 		CHAR TEST		**********************\n");
-	printf("\nzero-padding with field width 10\n");
 	printf("\nblank-padding with field width 10\n");
 	printf("----------------------------------------------------------------------\n");
 	printf("%10c", '@');
