@@ -6,19 +6,19 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:47 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/09 12:48:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:21:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_initio(t_input *io, const char *format, va_list arg)
+static void	ft_initio(t_input *input, const char *format, va_list arg)
 {
-	io->format = format;
-	va_copy(io->arg, arg);
+	input->format = format;
+	va_copy(input->arg, arg);
 	// va_end(arg);
-	io->ret_nbr = 0;
-	io->pos = 0;
+	input->ret_nbr = 0;
+	input->pos = 0;
 }
 
 int	ft_printf(const char *format, ...)

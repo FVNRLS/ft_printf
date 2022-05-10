@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/09 13:11:18 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:28:40 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	ft_parse(t_input *input, t_mod *mods)
 			input->pos++;
 			while (ft_strchr(FORM_MODS, input->format[input->pos])) //firstly search for mods
 			{
-				ft_modifiers(input, mods); //if found - change the mod flag
+				ft_check_mods(input, mods); //if found - change the mod flag, check next
 				input->pos++;
 			}
 			if (ft_strchr(FORM_SPECS, input->format[input->pos])) //then convert and apply the mods
 				ft_convert(input, mods);
-			ft_initmods(mods);
+			ft_init_mods(mods); //set modifiers back to 0
 		}
 		input->pos++; //move to the next pos
 	}
