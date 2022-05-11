@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/10 19:05:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:53:47 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_check_mods(t_input *input, t_mod *mods);
 void	ft_convert(t_input *input, t_mod *mods);
 void	ft_printchar(t_input *input, t_mod *mods);
 void	ft_printstr(t_input *input, t_mod *mods);
+void	ft_printint(t_input *input, t_mod *mods);
 
 //TOOLS
 int		ft_isdigit(int c);
@@ -62,5 +63,6 @@ char	*ft_strchr(const char *s, int c);
 void	ft_putstr(char *str, t_input *input);
 void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
+char	*ft_itoa_dec(int n);
 
 #endif

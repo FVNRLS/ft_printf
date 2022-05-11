@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:56:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 19:55:01 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:55:19 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_printchar(t_input *input, t_mod *mods)
 	if (mods->spec == '%')
 		c = '%';
 	else
-		c = (char)va_arg(input->arg, int);
+		c = va_arg(input->arg, int);
 	//exceptions handling if '-' and '0' flag are set
 	if (mods->minus == 1)
 		mods->zero = 0;

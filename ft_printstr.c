@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:39:30 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 19:54:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:54:10 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_printstr(t_input *input, t_mod *mods)
 	int		res_pads;
 
 	str = va_arg(input->arg, char *);
+	if (str == NULL)
+		str = "(null)"; 
 	if (mods->width == 0)
 		mods->minus = 0;
 	res_pads = ((mods->pads - ft_strlen(str)) + 1);
