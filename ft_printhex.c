@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:57:21 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 11:21:36 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 15:46:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	ft_printhex(t_input *input, t_mod *mods)
 	res_pads = ((mods->pads - ft_strlen(str)) + 1);
 	if (res_pads > 0)
 		mods->pads = res_pads;
+	else
+		mods->pads = 0;
 	
 	//blank padding
 	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 0)

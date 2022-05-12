@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_mandatory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 16:30:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 17:14:56 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,102 +30,102 @@ int main(void)
 	printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* STRING TEST WITH %%s */
-	// char str1[] = "This is the first format specifier#&.';?/!";
-	// char str2[] = "This is the second format specifier!";
+	/* STRING TEST WITH %%s */
+	char str1[] = "This is the first format specifier#&.';?/!";
+	char str2[] = "This is the second format specifier!";
 
-	// printf("\nSTRING TEST WITH %%s:\n");
-	// ret1 = ft_printf("%s, %s, THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", str1, str2);
-	// ret2 = printf("%s, %s, THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", str1, str2);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /* POINTER TEST WITH %%p*/
-	// int i = -2147483648;
-	// int j = 2147483647;
-	// int l = 0;
-	// int	*ptr1;
-	// int	*ptr2;
-	// int	*ptr3;
-	// int	*ptr4;
-
-	// ptr1 = &i;
-	// ptr2 = &j;
-	// ptr3 = &l;
-	// ptr4 = NULL;
-
-	// printf("\nPOINTER TEST WITH %%p:\n");
-	// ret1 = ft_printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
-	// ret2 = printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	printf("\nSTRING TEST WITH %%s:\n");
+	ret1 = ft_printf("%s, %s, THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", str1, str2);
+	ret2 = printf("%s, %s, THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", str1, str2);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* DECIMAL (BASE 10) NUMBER TEST WITH %d*/
-	// i = -2147483648;
-	// j = 2147483647;
-	// l = 0;
+	/* POINTER TEST WITH %%p*/
+	int i = -2147483648;
+	int j = 2147483647;
+	int l = 0;
+	int	*ptr1;
+	int	*ptr2;
+	int	*ptr3;
+	int	*ptr4;
 
-	// printf("\nDECIMAL (BASE 10) NUMBER TEST WITH  %%d:\n");
-	// ret1 = ft_printf("%d, %d, %d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
-	// ret2 = printf("%d, %d, %d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	ptr1 = &i;
+	ptr2 = &j;
+	ptr3 = &l;
+	ptr4 = NULL;
 
-
-	// /* INTEGER IN BASE 10 TEST WITH %i*/
-	// i = -2147483648;
-	// j = 2147483647;
-	// l = 0;
-
-	// printf("\nINTEGER IN BASE 10 TEST WITH %%i:\n");
-	// ret1 = ft_printf("%i, %i, %i THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
-	// ret2 = printf("%i, %i, %i THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	printf("\nPOINTER TEST WITH %%p:\n");
+	ret1 = ft_printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+	ret2 = printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* UNSIGNED DECIMAL (BASE 10) TEST WITH %u*/
-	// unsigned int k;
+	/* DECIMAL (BASE 10) NUMBER TEST WITH %d*/
+	i = -2147483648;
+	j = 2147483647;
+	l = 0;
+
+	printf("\nDECIMAL (BASE 10) NUMBER TEST WITH  %%d:\n");
+	ret1 = ft_printf("%d, %d, %d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+	ret2 = printf("%d, %d, %d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+
+
+	/* INTEGER IN BASE 10 TEST WITH %i*/
+	i = -2147483648;
+	j = 2147483647;
+	l = 0;
+
+	printf("\nINTEGER IN BASE 10 TEST WITH %%i:\n");
+	ret1 = ft_printf("%i, %i, %i THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+	ret2 = printf("%i, %i, %i THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+
+
+	/* UNSIGNED DECIMAL (BASE 10) TEST WITH %u*/
+	unsigned int k;
 	
-	// i = -2147483648;
-	// j = 0;
-	// k = 4294967295;
+	i = -2147483648;
+	j = 0;
+	k = 4294967295;
 
-	// printf("\nUNSIGNED DECIMAL (BASE 10) TEST WITH %%u:\n");
-	// ret1 = ft_printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// ret2 = printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /* HEXADECIMAL (BASE 16) LOWERCASE TEST WITH %x */
-	// i = -2147483648; //-2147483648
-	// j = 0;
-	// k = 42949627; //4294967295
-
-	// printf("\nHEXADECIMAL (BASE 16) LOWERCASE TEST WITH %%x\n");
-	// ret1 = ft_printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// ret2 = printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	printf("\nUNSIGNED DECIMAL (BASE 10) TEST WITH %%u:\n");
+	ret1 = ft_printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	ret2 = printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* HEXADECIMAL (BASE 16) UPPERCASE TEST WITH %X */
-	// printf("\nHEXADECIMAL (BASE 16) UPPERCASE TEST WITH %%X\n");
-	// ret1 = ft_printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// ret2 = printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	/* HEXADECIMAL (BASE 16) LOWERCASE TEST WITH %x */
+	i = -2147483648; //-2147483648
+	j = 0;
+	k = 42949627; //4294967295
+
+	printf("\nHEXADECIMAL (BASE 16) LOWERCASE TEST WITH %%x\n");
+	ret1 = ft_printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	ret2 = printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* TEST WITH % SIGN */
-	// printf("\nTEST WITH %% SIGN\n");
-	// ret1 = ft_printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
-	// ret2 = printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	/* HEXADECIMAL (BASE 16) UPPERCASE TEST WITH %X */
+	printf("\nHEXADECIMAL (BASE 16) UPPERCASE TEST WITH %%X\n");
+	ret1 = ft_printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	ret2 = printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+
+
+	/* TEST WITH % SIGN */
+	printf("\nTEST WITH %% SIGN\n");
+	ret1 = ft_printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
+	ret2 = printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
 	
 	
 	// /**********************************************************************************/

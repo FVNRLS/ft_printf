@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/12 13:24:52 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:59:43 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
 # define FORM_SPECS			"cspdiouxX%%"

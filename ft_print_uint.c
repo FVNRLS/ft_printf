@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:20:01 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 12:25:12 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:03:16 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	ft_print_uint(t_input *input, t_mod *mods)
 	res_pads = ((mods->pads - ft_strlen(str)) + 1);
 	if (res_pads > 0)
 		mods->pads = res_pads;
+	else
+		mods->pads = 0;
 	
 	//blank padding
 	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 0)

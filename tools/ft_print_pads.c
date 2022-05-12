@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:11:05 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 19:00:14 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:23:40 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_zeropads(t_input *input, t_mod *mods)
 	int	i;
 
 	i = 0;
-	while (i < mods->pads - 1)
+	while (i < (mods->pads) - 1) //maybe fix!
 	{
 		write(1, "0", 1);
 		i++;

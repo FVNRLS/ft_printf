@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 14:12:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:37:43 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1316,5 +1316,8 @@ int main(void)
 		printf("Here the return of ft_printf: 	%d\n", ret1);
 		printf("Here the return of printf: 	%d\n", ret2);
 	}
+	
+	ft_printf("%.3d", 420000);
+	
 	return (0);
 }
