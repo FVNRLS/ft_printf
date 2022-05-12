@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_dec.c                                      :+:      :+:    :+:   */
+/*   ft_itoa_uint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 11:52:13 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 11:40:54 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/12 11:49:34 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/12 11:53:54 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_count_size_dec(int n)
+size_t	ft_count_size_uint(unsigned int n)
 {	
 	int	size;
 
-	if (n > 0)
-		size = 0;
-	else
-		size = 1;
+	size = 0;
 	while (n != 0)
 	{
 		n /= 10;
@@ -28,16 +25,21 @@ size_t	ft_count_size_dec(int n)
 	return (size);
 }
 
-char	*ft_itoa_dec(int n)
+char	*ft_itoa_uint(unsigned int nbr)
 {
 	char	*str;
-	long	nbr;
 	size_t	size;
 
-	nbr = n;
-	size = ft_count_size_dec(n);
-	if (nbr < 0)
-		nbr *= -1;
+	if (nbr == 0)
+	{
+		str = (malloc(sizeof(char) * 2));
+		if (!str)
+			return (NULL);
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
+	size = ft_count_size_uint(nbr);
 	str = (malloc(sizeof(char) * (size + 1)));
 	if (!str)
 		return (NULL);
@@ -49,9 +51,5 @@ char	*ft_itoa_dec(int n)
 		nbr /= 10;
 		size--;
 	}
-	if (size == 0 && str[1] == '\0')
-		str[0] = '0';
-	else if (size == 0 && str[1] != '\0')
-		str[0] = '-';
 	return (str);
 }

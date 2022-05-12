@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:56:57 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 18:58:24 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:53:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "../ft_printint.c"
 # include "../ft_printptr.c"
 # include "../ft_printhex.c"
+# include "../ft_print_uint.c"
 
 /* TOOLS */
 # include "../tools/ft_isdigit.c"
@@ -40,5 +41,7 @@
 # include "../tools/ft_itoa_dec.c"
 # include "../tools/ft_arg_is_last.c"
 # include "../tools/ft_itoa_ptr.c"
+# include "../tools/ft_itoa_hex.c"
+# include "../tools/ft_itoa_uint.c"
 
 #endif

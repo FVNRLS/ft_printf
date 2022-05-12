@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/11 19:31:42 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:45:05 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define FORM_MODS			"#-+ .*0123456789"
 # define HEX_BASE_LOWERCASE	"0123456789abcdef"
 # define HEX_BASE_UPPERCASE	"0123456789ABCDEF"
-
 
 typedef struct s_mod
 {
@@ -60,6 +59,7 @@ void	ft_printstr(t_input *input, t_mod *mods);
 void	ft_printint(t_input *input, t_mod *mods);
 void	ft_printptr(t_input *input, t_mod *mods);
 void	ft_printhex(t_input *input, t_mod *mods);
+void	ft_print_uint(t_input *input, t_mod *mods);
 
 //TOOLS
 int		ft_isdigit(int c);
@@ -71,5 +71,7 @@ void	ft_print_zeropads(t_input *input, t_mod *mods);
 char	*ft_itoa_dec(int n);
 int		ft_arg_is_last(t_input *input);
 char	*ft_itoa_ptr(unsigned long n);
+char	*ft_itoa_hex(unsigned long n, t_mod *mods);
+char	*ft_itoa_uint(unsigned int nbr);
 
 #endif

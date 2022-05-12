@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:43:55 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 18:47:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 10:27:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_printint(t_input *input, t_mod *mods)
 			}
 			ft_putstr(str, input);
 		}
-		if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 1)
+		else if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 1)
 		{
 			ft_print_zeropads(input, mods);
 			if (mods->plus == 1 && nbr >= 0) //write plus if nbr is 0 or positive

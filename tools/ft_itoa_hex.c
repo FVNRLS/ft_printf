@@ -1,57 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_dec.c                                      :+:      :+:    :+:   */
+/*   ft_itoa_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 11:52:13 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 11:40:54 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/12 10:09:17 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/12 10:45:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_count_size_dec(int n)
+size_t	ft_count_size_hex(unsigned long n)
 {	
 	int	size;
 
-	if (n > 0)
-		size = 0;
-	else
-		size = 1;
+	size = 0;
 	while (n != 0)
 	{
-		n /= 10;
 		size++;
+		n /= 16;
 	}
 	return (size);
 }
 
-char	*ft_itoa_dec(int n)
+char	*ft_itoa_hex(unsigned long n, t_mod *mods)
 {
 	char	*str;
-	long	nbr;
+	char	*hex_base;
 	size_t	size;
-
-	nbr = n;
-	size = ft_count_size_dec(n);
-	if (nbr < 0)
-		nbr *= -1;
+	
+	if (n == 0)
+	{
+		str = (malloc(sizeof(char) * 2));
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
+	if (mods->spec == 'x')
+		hex_base = HEX_BASE_LOWERCASE;
+	else if (mods->spec == 'X')
+		hex_base = HEX_BASE_UPPERCASE;
+	size = ft_count_size_hex(n);
 	str = (malloc(sizeof(char) * (size + 1)));
 	if (!str)
 		return (NULL);
 	str[size] = '\0';
 		size--;
-	while (nbr > 0)
+	while (n > 0)
 	{
-		str[size] = nbr % 10 + '0';
-		nbr /= 10;
+		str[size] = hex_base[n % 16];
+		n /= 16;
 		size--;
 	}
-	if (size == 0 && str[1] == '\0')
-		str[0] = '0';
-	else if (size == 0 && str[1] != '\0')
-		str[0] = '-';
 	return (str);
 }
