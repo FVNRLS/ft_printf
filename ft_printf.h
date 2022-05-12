@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/11 11:53:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:31:42 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# define ALL_SYMBOLS	"cspdiouxX%%#-+ .*0123456789"
-# define FORM_SPECS		"cspdiouxX%%"
-# define FORM_MODS		"#-+ .*0123456789"
+# define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
+# define FORM_SPECS			"cspdiouxX%%"
+# define FORM_MODS			"#-+ .*0123456789"
+# define HEX_BASE_LOWERCASE	"0123456789abcdef"
+# define HEX_BASE_UPPERCASE	"0123456789ABCDEF"
+
 
 typedef struct s_mod
 {
@@ -55,6 +58,8 @@ void	ft_convert(t_input *input, t_mod *mods);
 void	ft_printchar(t_input *input, t_mod *mods);
 void	ft_printstr(t_input *input, t_mod *mods);
 void	ft_printint(t_input *input, t_mod *mods);
+void	ft_printptr(t_input *input, t_mod *mods);
+void	ft_printhex(t_input *input, t_mod *mods);
 
 //TOOLS
 int		ft_isdigit(int c);
@@ -64,5 +69,7 @@ void	ft_putstr(char *str, t_input *input);
 void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
 char	*ft_itoa_dec(int n);
+int		ft_arg_is_last(t_input *input);
+char	*ft_itoa_ptr(unsigned long n);
 
 #endif

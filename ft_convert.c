@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:04 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 10:43:06 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:49:54 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	ft_convert(t_input *input, t_mod *mods)
 		ft_printstr(input, mods);
 	else if (mods->spec == 'i' || mods->spec == 'd')
 	 	ft_printint(input, mods);
-	// else if (mods->spec == 'u' || mods->spec == 'x'
-	// 	|| mods->spec == 'X')
-	// 	ft_printnbr(input, mods, (unsigned long int) va_arg(input->arg, unsigned int));
-	// else
-	// 	ft_printnbr(input, mods, va_arg(input->arg, unsigned long int));
+	else if (mods->spec == 'p')
+		ft_printptr(input, mods);
+	else if (mods->spec == 'x' || mods->spec == 'X')
+		ft_printhex(input, mods);
 }
+
+//TODO: x, X --> continue! , u

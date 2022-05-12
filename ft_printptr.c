@@ -1,48 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 15:56:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 17:55:25 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/11 17:01:38 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/11 19:00:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printchar(t_input *input, t_mod *mods)
+void	ft_printptr(t_input *input, t_mod *mods)
 {
-	char	c;
+	unsigned long	ptr;
+	char			*str;
+	char			res_pads;
 
-	if (mods->spec == '%')
-		c = '%';
+	ptr = (unsigned long)va_arg(input->arg, void*);
+	str = ft_itoa_ptr(ptr);
+	res_pads = ((mods->pads - ft_strlen(str)) - 1);
+	if (res_pads > 0)
+		mods->pads = res_pads;
 	else
-		c = va_arg(input->arg, int);
-	//exceptions handling if '-' and '0' flag are set
-	if (mods->minus == 1)
-		mods->zero = 0;
-	//zero padding
-	if (mods->zero == 1 && mods->width == 1)
-	{
-		ft_print_zeropads(input, mods);
-		write(1, &c, 1);
-	}
+		mods->pads = 0;
 	//blank padding
-	else if (mods->minus == 0 && mods->width == 1)
+	if (mods->minus == 0 && mods->width == 1)
 	{
 		ft_print_pads(input, mods);
-		write(1, &c, 1);
+		write(1, "0x", 2);
+		ft_putstr(str, input);
 	}
 	//left adjustment with padding
 	else if (mods->minus == 1 && mods->width == 1)
 	{
-		write(1, &c, 1);
+		write(1, "0x", 2);
+		ft_putstr(str, input);
 		ft_print_pads(input, mods);
 	}
 	//no modifiers
-	else if (mods->minus == 0 && mods->width == 0 && mods->zero == 0)
-		write(1, &c, 1);
-	input->ret_nbr++;
+	else if (mods->minus == 0 && mods->width == 0)
+	{
+		write(1, "0x", 2);
+		ft_putstr(str, input);
+	}
+	//written 2 chars (0x)
+	input->ret_nbr += 2;
+
+	free(str);
+	str = NULL;
 }

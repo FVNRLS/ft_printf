@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 14:19:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:55:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ int main(void)
 		printf("Here the return of printf: 	%d\n", ret2);
 		printf("===================================================================== \n\n\n");
 	}
-
 	/* INTEGER (BASE 10) TEST WITH %i and %d */
 	{
 		int i;
@@ -152,44 +151,102 @@ int main(void)
 		printf("Here the return of printf: 	%d\n", ret2);
 		printf("===================================================================== \n\n\n");
 		
+		printf("===================================================================== \n");
+		printf("'+' format modifier with field width 10 for %%d\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%+10d, %+10i, %+10d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		ret2 = printf("%+10d, %+10i, %+10d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+
+		printf("===================================================================== \n");
+		printf("' ' format modifier (space) with field width 10 for %%d\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("% 10d, % 10i, % 10d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		ret2 = printf("% 10d, % 10i, % 10d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+
+		printf("===================================================================== \n");
+		printf("'.' format modifier (precision) with field width 20 and 0 for %%d\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%.20d, %.020i, %.03d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		ret2 = printf("%.20d, %.020i, %.03d THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+	}
+	/* POINTER TEST WITH %%p*/
+	{
+		int i = -2147483648;
+		int j = 2147483647;
+		int l = 0;
+		int	ret1;
+		int	ret2;
+		int	*ptr1;
+		int	*ptr2;
+		int	*ptr3;
+		int	*ptr4;
+		
+		ptr1 = &i;
+		ptr2 = &j;
+		ptr3 = &l;
+		ptr4 = NULL;
+
+		printf("\n\n**********************************************************************");
+		printf("\nPOINTER TEST WITH %%p:\n");
+		printf("**********************************************************************\n\n");
+		
+		printf("===================================================================== \n");
+		printf("'-' format modifier (adjust left) with field width 10 and 20 for %%p\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%-10p, %-10p, %-20p %-20p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+		ret2 = printf("%-10p, %-10p, %-20p %-20p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+		
+		printf("===================================================================== \n");
+		printf("blank-padding with field width 10 and 20 for %%p\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%10p, %10p, %20p %20p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+		ret2 = printf("%10p, %10p, %20p %20p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
 	}
 
-
-	/* INTEGER IN BASE 10 TEST WITH %i*/
-
-
-
-
-
-
-	// /* POINTER TEST WITH %%p*/
-	// int i = -2147483648;
-	// int j = 2147483647;
-	// int l = 0;
-	// int	*ptr1;
-	// int	*ptr2;
-	// int	*ptr3;
-	// int	*ptr4;
-
-	// ptr1 = &i;
-	// ptr2 = &j;
-	// ptr3 = &l;
-	// ptr4 = NULL;
-
-	// printf("\nPOINTER TEST WITH %%p:\n");
-	// ret1 = ft_printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
-	// ret2 = printf("%p, %p, %p %p THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", ptr1, ptr2, ptr3, ptr4);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /* DECIMAL (BASE 10) NUMBER TEST WITH %d*/
-	// i = -2147483648;
-	// j = 2147483647;
-	// l = 0;
-
-
-
+	/* HEXADECIMAL (BASE 16) LOWERCASE and UPPERCASE TEST WITH %x */
+	int i = -2147; //-2147483648
+	int j = 2147483647;
+	int l = 0;
+	int k = 42;
+	int	ret1;
+	int	ret2;
+	printf("\n\n**********************************************************************");
+	printf("\nHEXADECIMAL (BASE 16) LOWERCASE and UPPERCASE TEST WITH %%x and %%X\n");
+	printf("**********************************************************************\n\n");
+	
+	printf("===================================================================== \n");
+	printf("no format modifiers for %%x and %%X\n");
+	printf("----------------------------------------------------------------------\n");
+	ret1 = ft_printf("%x%X%x%X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l, k);
+	ret2 = printf("%x%X%x%X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l, k);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+	printf("===================================================================== \n\n\n");
+	
+	printf("===================================================================== \n");
+	printf("'-' format modifier (adjust left) with field width 10 and 20 for %%x and %%X\n");
+	printf("----------------------------------------------------------------------\n");
+	ret1 = ft_printf("%-10x%-10X%-20x%-20X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l, k);
+	ret2 = printf("%-10x%-10X%-20x%-20X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, l, k);
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+	printf("===================================================================== \n\n\n");
+	
 
 	// /* UNSIGNED DECIMAL (BASE 10) TEST WITH %u*/
 	// unsigned int k;
@@ -205,32 +262,6 @@ int main(void)
 	// printf("Here the return of printf: 	%d\n", ret2);
 
 
-	// /* HEXADECIMAL (BASE 16) LOWERCASE TEST WITH %x */
-	// i = -2147483648; //-2147483648
-	// j = 0;
-	// k = 42949627; //4294967295
-
-	// printf("\nHEXADECIMAL (BASE 16) LOWERCASE TEST WITH %%x\n");
-	// ret1 = ft_printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// ret2 = printf("%x%x%x THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /* HEXADECIMAL (BASE 16) UPPERCASE TEST WITH %X */
-	// printf("\nHEXADECIMAL (BASE 16) UPPERCASE TEST WITH %%X\n");
-	// ret1 = ft_printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// ret2 = printf("%X %X %X THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /* TEST WITH % SIGN */
-	// printf("\nTEST WITH %% SIGN\n");
-	// ret1 = ft_printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
-	// ret2 = printf("%%%%, %%, %% THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
 	
 	
 	// /**********************************************************************************/
