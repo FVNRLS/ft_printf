@@ -5,41 +5,58 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/06 13:52:03 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/06 13:52:06 by rmazurit         ###   ########.fr        #
+#    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
+#    Updated: 2022/05/12 15:18:43 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# compiler variables
-CC		=	cc
-FLAGS 	=	-Wall -Wextra -Werror
-# file variables
-NAME	= libftprintf.a
-MAIN	= printf initmodifiers parse modifiers convert printchar pad printstr printint printnbr putnbrpf
-LIBFT	= isdigit strlen strchr
-HEADER	= ft_printf.h
-MAINFILES	= $(addprefix ft_,$(addsuffix .c, $(MAIN)))
-LIBFTFILES	= $(addprefix libft/ft_,$(addsuffix .c, $(LIBFT)))
-MAINOBJS	= $(MAINFILES:.c=.o)
-LIBFTOBJS	= $(LIBFTFILES:.c=.o)
+NAME 	= 		libftprintf.a
 
-all : $(NAME) clean
+CC 		= 		gcc
 
-$(NAME): $(MAINOBJS) $(LIBFTOBJS)
-	@ar rc $(NAME) $(MAINOBJS) $(LIBFTOBJS)
+FLAGS	= 		-Wall -Wextra -Werror
 
-%.o: %.c $(HEADER)
-	@$(CC) $(FLAGS) -c $< -o $@
+SRC 	= 		ft_printf.c 				\
+				ft_init_mods.c				\
+				ft_parse.c					\
+				ft_check_mods.c				\
+				ft_convert.c 				\
+				ft_printchar.c				\
+				ft_printstr.c				\
+				ft_printint.c				\
+				ft_printptr.c				\
+				ft_printhex.c				\
+				ft_print_uint.c				\
+				./tools/ft_isdigit.c		\
+				./tools/ft_strlen.c			\
+				./tools/ft_strchr.c			\
+				./tools/ft_putstr.c			\
+				./tools/ft_print_pads.c		\
+				./tools/ft_itoa_dec.c		\
+				./tools/ft_arg_is_last.c	\
+				./tools/ft_itoa_ptr.c		\
+				./tools/ft_itoa_hex.c		\
+				./tools/ft_itoa_uint.c		\
+				
+all: $(NAME)
+
+$(NAME): *.c
+	Make -C ./libft
+	cp ./libft/libft.a $(NAME)
+	$(CC) $(FLAGS) -c $(SRC)
+	ar rc $(NAME) *.o
 
 clean:
+	rm -f ./libft/*.o
 	rm -f *.o
-	rm -f libft/*.o
-
-bonus: re
 
 fclean: clean
+	rm -f ./libft/libft.a
+	rm -f ./libft/*.o
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
+
+bonus: re
 
 .PHONY: all clean fclean re bonus
