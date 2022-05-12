@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:09:17 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 10:45:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:24:11 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_itoa_hex(unsigned long n, t_mod *mods)
 	if (n == 0)
 	{
 		str = (malloc(sizeof(char) * 2));
+		if (!str)
+			return (NULL);
 		str[0] = '0';
 		str[1] = '\0';
 		return (str);

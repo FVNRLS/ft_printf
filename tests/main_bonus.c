@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 11:52:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:51:04 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,6 @@ int main(void)
 		printf("Here the return of printf: 	%d\n", ret2);
 		printf("===================================================================== \n\n\n");
 	}
-
 	/* HEXADECIMAL (BASE 16) LOWERCASE and UPPERCASE TEST WITH %x and %X*/
 	{
 		int i = -2147; //-2147483648
@@ -275,558 +274,637 @@ int main(void)
 		printf("Here the return of printf: 	%d\n", ret2);
 		printf("===================================================================== \n\n\n");
 	}
-
 	/* UNSIGNED DECIMAL (BASE 10) TEST WITH %u*/
-	int i 			= -2147483648; //-2147483648
-	int j			= 0;
-	unsigned int k 	= 4294967295;
-	int	ret1;
-	int	ret2;
-
-	printf("\nUNSIGNED DECIMAL (BASE 10) TEST WITH %%u:\n");
-	ret1 = ft_printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	ret2 = printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
-	printf("Here the return of ft_printf: 	%d\n", ret1);
-	printf("Here the return of printf: 	%d\n", ret2);
-
-
-	// /**********************************************************************************/
-	// /**********************************************************************************/
-	// 								/* ADDITIONAL TESTS*/
-	// printf("\n------------ADDITIONAL TESTS------------\n");
-	
-	// printf("\n\n------------CHAR TESTS------------\n");
-	// printf("\n------------ TEST 1 ------------\n");
-	// ret1 = ft_printf("1, 2, 3, -d test, testing, 0.4s sound, 1, 2, 3xp, sound, -*dtest");
-	// printf("\n");
-	// ret2 = printf("1, 2, 3, -d test, testing, 0.4s sound, 1, 2, 3xp, sound, -*dtest");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 2 ------------\n");
-	// ret1 = ft_printf("%c", 'a');
-	// write(1, "\n", 1);
-	// ret2 = printf("%c", 'a');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 3 ------------\n");
-	// ret1 = ft_printf("%c%c%c*", '\0', '1', 1);
-	// write(1, "\n", 1);
-	// ret2 = printf("%c%c%c*", '\0', '1', 1);
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 4 ------------\n");
-	// ret1 = ft_printf("%c small string", 'a');
-	// write(1, "\n", 1);
-	// ret2 = printf("%c small string", 'a');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 5 ------------\n");
-	// ret1 = ft_printf("%c small string", 'a');
-	// write(1, "\n", 1);
-	// ret2 = printf("%c small string", 'a');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 6 ------------\n");
-	// ret1 = ft_printf("the char is: %c", 'a');
-	// write(1, "\n", 1);
-	// ret2 = printf("the char is: %c", 'a');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 7 ------------\n");
-	// ret1 = ft_printf("the char is: %c", '\0');
-	// write(1, "\n", 1);
-	// ret2 = printf("the char is: %c", '\0');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 7 ------------\n");
-	// ret1 = ft_printf("n%cs", 'a');
-	// write(1, "\n", 1);
-	// ret2 = printf("n%cs", 'a');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 8 ------------\n");
-	// ret1 = ft_printf("%c%c%c%c%c", 'a', 'i', 'u', 'e', 'o');
-	// write(1, "\n", 1);
-	// ret2 = printf("%c%c%c%c%c", 'a', 'i', 'u', 'e', 'o');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 9 ------------\n");
-	// ret1 = ft_printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
-	// write(1, "\n", 1);
-	// ret2 = printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 10 ------------\n");
-	// ret1 = ft_printf("l%cl%cl%cl%cl%c", '\0', '\0', '\0', 'e', '\0');
-	// write(1, "\n", 1);
-	// ret2 = printf("l%cl%cl%cl%cl%c", '\0', '\0', '\0', 'e', '\0');
-	// printf("\nHere the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n\n------------STRING TESTS------------\n");
-	// printf("\n------------ TEST 11 ------------\n");
-	// ret1 = ft_printf("%s", "");
-	// printf("\n");
-	// ret2 = printf("%s", "");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 12 ------------\n");
-	// ret1 = ft_printf("this is a %s", "test");
-	// printf("\n");
-	// ret2 = printf("this is a %s", "test");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 13 ------------\n");
-	// ret1 = ft_printf("this is 1 %s with %s %s", "test", "multiple", "strings");
-	// printf("\n");
-	// ret2 = printf("this is 1 %s with %s %s", "test", "multiple", "strings");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 14 ------------\n");
-	// ret1 = ft_printf("%s%s%s%s", "This ", "is", " an ugly ", "test");
-	// printf("\n");
-	// ret2 = printf("%s%s%s%s", "This ", "is", " an ugly ", "test");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 15 ------------\n");
-	// ret1 = ft_printf("%s", "This is a rather simple test.");
-	// printf("\n");
-	// ret2 = printf("%s", "This is a rather simple test.");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 16 ------------\n");
-	// ret1 = ft_printf("%s", "-2");
-	// printf("\n");
-	// ret2 = ft_printf("%s", "-2");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+	{
+		int i 			= -214323; //-2147483648
+		int j			= 0;
+		unsigned int k 	= 4294967; //4294967295
+		int	ret1;
+		int	ret2;
 		
-	// printf("\n------------ TEST 17 ------------\n");
-	// ret1 = ft_printf("%s", "-24");
-	// printf("\n");
-	// ret2 = printf("%s", "-24");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 18 ------------\n");
-	// ret1 = ft_printf("%s", "-stop");
-	// printf("\n");
-	// ret2 = printf("%s", "-stop");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 19 ------------\n");
-	// ret1 = ft_printf("%s", "-0003");
-	// printf("\n");
-	// ret2 = printf("%s", "-0003");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 20 ------------\n");
-	// ret1 = ft_printf("%s", "0x42");
-	// printf("\n");
-	// ret2 = printf("%s", "0x42");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 21 ------------\n");
-	// ret1 = ft_printf("%s", "0x0000042");
-	// printf("\n");
-	// ret2 = printf("%s", "0x0000042");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 22 ------------\n");
-	// ret1 = ft_printf("some naugty tests: %s", "0000%");
-	// printf("\n");
-	// ret2 = printf("some naugty tests: %s", "0000%");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 23 ------------\n");
-	// ret1 = ft_printf("some naugty tests: %s", "    %");
-	// printf("\n");
-	// ret2 = printf("some naugty tests: %s", "    %");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 24 ------------\n");
-	// ret1 = ft_printf("some naugty tests: %s", "%000");
-	// printf("\n");
-	// ret2 = printf("some naugty tests: %s", "%000");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 25 ------------\n");
-	// ret1 = ft_printf("%s", "bea thought but bea forgot the loop that the chars cause she was floaty during the amsterdam siren call. she got me by surprise you probably read my mind that look in your eyes and judging by your own cries you probably read my mind this is a really long string and if you see this you must look at your return values!kthxbai this must have more than 127 chars by now isnt it ok 4242 4 life 1337 code everyday to the moon!");
-	// printf("\n");
-	// ret2 = printf("%s", "bea thought but bea forgot the loop that the chars cause she was floaty during the amsterdam siren call. she got me by surprise you probably read my mind that look in your eyes and judging by your own cries you probably read my mind this is a really long string and if you see this you must look at your return values!kthxbai this must have more than 127 chars by now isnt it ok 4242 4 life 1337 code everyday to the moon!");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 28 (SEGFAULT //handle SIGABRT ERROR)------------\n");
-	// char *null_str = NULL;
-	
-	// ret1 = ft_printf("%s", null_str);
-	// printf("\n");
-	// ret2 = printf("%s", null_str);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 29 (SEGFAULT //handle SIGABRT ERROR)------------\n");	
-	// ret1 = ft_printf("%s everywhere", null_str);
-	// printf("\n");
-	// ret2 = printf("%s everywhere", null_str);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 30 (SEGFAULT //handle SIGABRT ERROR)------------\n");	
-	// ret1 = ft_printf("everywhere %s", null_str);
-	// printf("\n");
-	// ret2 = printf("everywhere %s", null_str);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 31 ------------\n");	
-	// ret1 = ft_printf("%s", "h");
-	// printf("\n");
-	// ret2 = printf("%s", "h");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 32 ------------\n");	
-	// ret1 = ft_printf("t%st%s", "a", "u");
-	// printf("\n");
-	// ret2 = printf("t%st%s", "a", "u");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 33 ------------\n");	
-	// ret1 = ft_printf("%s%s%s%s%s%s", "a", "i", "u", "e", "o", "l");
-	// printf("\n");
-	// ret2 = printf("%s%s%s%s%s%s", "a", "i", "u", "e", "o", "l");
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 34 ------------\n");
-	// int test = 42;
-	
-	// ret1 = ft_printf("%p", &test);
-	// printf("\n");
-	// ret2 = ft_printf("%p", &test);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 35 ------------\n");	
-	// ret1 = ft_printf("%p is a virtual memory address", &test);
-	// printf("\n");
-	// ret2 = printf("%p is a virtual memory address", &test);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 36 ------------\n");	
-	// ret1 = ft_printf("The address of the answer is %p", &test);
-	// printf("\n");
-	// ret2 = printf("The address of the answer is %p", &test);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 37 ------------\n");	
-	// ret1 = ft_printf("The address is %p, so what?", &test);
-	// printf("\n");
-	// ret2 = printf("The address is %p, so what?", &test);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 38 ------------\n");
-	// int *ptr = &test;	
-	
-	// ret1 = ft_printf("A pointer at %p points to %p", &test, &ptr);
-	// printf("\n");
-	// ret2 = printf("A pointer at %p points to %p", &test, &ptr);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 39 (handle SIGABRT ERROR)------------\n");	//TODO: SIGABRT!!!!
-	// ret1 = ft_printf("This %p is a very strange address", (void *)(long int)test);
-	// printf("\n");
-	// ret2= printf("This %p is a very strange address", (void *)(long int)test);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 40 (HEAP POINTER)------------\n");
-	// char *mallocked = malloc(2);
-	
-	// ret1 = ft_printf("This %p is an address from the heap", mallocked); 
-	// free(mallocked);
-	// printf("\n");
-	// mallocked = malloc(2);
-	// ret2 = printf("This %p is an address from the heap", mallocked); 
-	// free(mallocked);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 41 (handle SIGABRT ERROR)------------\n");	//TODO: SIGABRT!!!!
-	// ret1 = ft_printf("%p", NULL);
-	// printf("\n");
-	// ret2 = printf("%p", NULL);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 42 (handle SIGABRT ERROR)------------\n");	//TODO: SIGABRT!!!!
-	// ret1 = ft_printf("The NULL macro represents the %p address", NULL);
-	// printf("\n");
-	// ret2 = printf("The NULL macro represents the %p address", NULL);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 43 (handle SIGABRT ERROR)------------\n");	//TODO: Wrong output!!!!
-	// ret1 = ft_printf("This %p is even stranger", (void *)-1);
-	// printf("\n");
-	// ret2 = ft_printf("This %p is even stranger", (void *)-1);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n\n------------DECIMAL TEST with %%d and %%i------------\n");
-	// printf("\n------------ TEST 44 ------------\n");
-	// ret1 = ft_printf("%d", 0);
-	// printf("\n");
-	// ret2 = printf("%d", 0);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 45 ------------\n");
-	// ret1 = ft_printf("%d", 10);
-	// printf("\n");
-	// ret2 = printf("%d", 10);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 46 ------------\n");
-	// ret1 = ft_printf("%d, %d", 10, 20);
-	// printf("\n");
-	// ret2 = printf("%d, %d", 10, 20);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 47 ------------\n");
-	// ret1 = ft_printf("%d%d%d%d", 10, 20, 30, 5);
-	// printf("\n");
-	// ret2 = printf("%d%d%d%d", 10, 20, 30, 5);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 48 ------------\n");
-	// ret1 = ft_printf("%d %d", 2147483647, (int)-2147483648);
-	// printf("\n");
-	// ret2 = printf("%d %d", 2147483647, (int)-2147483648);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 49 ------------\n");
-	// ret1 = ft_printf("42 - 84 is %d", -42);
-	// printf("\n");
-	// ret2 = printf("42 - 84 is %d", -42);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 50 ------------\n");
-	// ret1 = ft_printf("%d C is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// ret2 = printf("%d C is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 51 ------------\n");
-	// ret1 = ft_printf("%dxC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// ret2 = printf("%dxC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-
-	// printf("\n------------ TEST 52 ------------\n");
-	// ret1 = ft_printf("%dsC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// ret2 = printf("%dsC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 53 ------------\n");
-	// ret1 = ft_printf("%dpC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// ret2 = printf("%dpC is the lowest temperature in the universe", -273);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 54 ------------\n");
-	// ret1 = ft_printf("%i", 0);
-	// printf("\n");
-	// ret2 = printf("%i", 0);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 55 ------------\n");
-	// ret1 = ft_printf("%i", 10);
-	// printf("\n");
-	// ret2 = printf("%i", 10);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 56 ------------\n");
-	// ret1 = ft_printf("%i, %i", 10, 23);
-	// printf("\n");
-	// ret2 = printf("%i, %i", 10, 23);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 57 ------------\n");
-	// ret1 = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
-	// printf("\n");
-	// ret2 = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 58 ------------\n");
-	// ret1 = ft_printf("%i %i", 2147483647, (int)-2147483648);
-	// printf("\n");
-	// ret2 = printf("%i %i", 2147483647, (int)-2147483648);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+		printf("\n\n**********************************************************************");
+		printf("\nUNSIGNED DECIMAL (BASE 10) TEST WITH %%u:\n");
+		printf("**********************************************************************\n\n");
 		
-	// printf("\n------------ TEST 59 ------------\n");
-	// ret1 = ft_printf("%iq%i", 21447, -21648);
-	// printf("\n");
-	// ret2 = printf("%iq%i", 21447, -21648);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n\n------------UNSIGNED INT TEST with %%u ------------\n");
-	// printf("\n------------ TEST 60 ------------\n");
-	// ret1 = ft_printf("%u", 42);
-	// printf("\n");
-	// ret2 = printf("%u", 42);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 61 ------------\n");
-	// ret1 = ft_printf("%u", 0);
-	// printf("\n");
-	// ret2 = printf("%u", 0);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 62 ------------\n");
-	// ret1 = ft_printf("%u", 2147483647);
-	// printf("\n");
-	// ret2 = printf("%u", 2147483647);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 63 ------------\n");
-	// ret1 = ft_printf("%u", (unsigned int)2147483648);
-	// printf("\n");
-	// ret2 = printf("%u", (unsigned int)2147483648);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 64 ------------\n");
-	// ret1 = ft_printf("%u", (unsigned int)3147983649);
-	// printf("\n");
-	// ret2 = printf("%u", (unsigned int)3147983649);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
-	
-	// printf("\n------------ TEST 65 ------------\n");
-	// ret1 = ft_printf("%u", (unsigned int)4294967295);
-	// printf("\n");
-	// ret2 = printf("%u", (unsigned int)4294967295);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n");
+		printf("no format modifiers for %%u\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		ret2 = printf("%u, %u, %u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+		
+		printf("===================================================================== \n");
+		printf("'-' format modifier (adjust left) with field width 10 and 20 for %%u\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%-10u %-10u %-20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		ret2 = printf("%-10u %-10u %-20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+		
+		printf("===================================================================== \n");
+		printf("blank-padding with field width 10 and 20 for %%u\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%10u %10u %20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		ret2 = printf("%10u %10u %20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
 
-	// printf("\n------------ TEST 66 ------------\n");
-	// ret1 = ft_printf("%u to the power of %u is %u", 2, 32, (unsigned int)4294967295);
-	// printf("\n");
-	// ret2 = printf("%u to the power of %u is %u", 2, 32, (unsigned int)4294967295);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n");
+		printf("zero-padding with field width 10, 15 and 20 for %%u\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%015u %010u %020u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		ret2 = printf("%015u %010u %020u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
 
-	// printf("\n------------ TEST 67 ------------\n");
-	// ret1 = ft_printf("%u %u %u %u", (unsigned int)429896724, 0, 32, (unsigned int)4294967295);
-	// printf("\n");
-	// ret2 = printf("%u %u %u %u", (unsigned int)429896724, 0, 32, (unsigned int)4294967295);
-	// printf("\n");
-	// printf("Here the return of ft_printf: 	%d\n", ret1);
-	// printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n");
+		printf("'.' format modifier (precision) with field width 10 and 20 for %%u\n");
+		printf("----------------------------------------------------------------------\n");
+		ret1 = ft_printf("%.15u %.10u %.20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		ret2 = printf("%.15u %.10u %.20u THIS IS A PLAIN TEXT WITHOUT ANY FORMAT SPECIFIERS!\n", i, j, k);
+		printf("Here the return of ft_printf: 	%d\n", ret1);
+		printf("Here the return of printf: 	%d\n", ret2);
+		printf("===================================================================== \n\n\n");
+	}
+
+
+	/**********************************************************************************/
+	/**********************************************************************************/
+									/* ADDITIONAL TESTS*/
+	printf("\n\n\n\n------------ADDITIONAL MANDATORY TESTS------------\n");
+	{
+		
+		/* CHAR TEST */
+		{
+			int ret1;
+			int ret2;
+			
+			printf("\n\n------------CHAR TESTS------------\n");
+			printf("\n------------ TEST 1 ------------\n");
+			ret1 = ft_printf("1, 2, 3, -d test, testing, 0.4s sound, 1, 2, 3xp, sound, -*dtest");
+			printf("\n");
+			ret2 = printf("1, 2, 3, -d test, testing, 0.4s sound, 1, 2, 3xp, sound, -*dtest");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 2 ------------\n");
+			ret1 = ft_printf("%c", 'a');
+			write(1, "\n", 1);
+			ret2 = printf("%c", 'a');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 3 ------------\n");
+			ret1 = ft_printf("%c%c%c*", '\0', '1', 1);
+			write(1, "\n", 1);
+			ret2 = printf("%c%c%c*", '\0', '1', 1);
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 4 ------------\n");
+			ret1 = ft_printf("%c small string", 'a');
+			write(1, "\n", 1);
+			ret2 = printf("%c small string", 'a');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 5 ------------\n");
+			ret1 = ft_printf("%c small string", 'a');
+			write(1, "\n", 1);
+			ret2 = printf("%c small string", 'a');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 6 ------------\n");
+			ret1 = ft_printf("the char is: %c", 'a');
+			write(1, "\n", 1);
+			ret2 = printf("the char is: %c", 'a');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 7 ------------\n");
+			ret1 = ft_printf("the char is: %c", '\0');
+			write(1, "\n", 1);
+			ret2 = printf("the char is: %c", '\0');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 7 ------------\n");
+			ret1 = ft_printf("n%cs", 'a');
+			write(1, "\n", 1);
+			ret2 = printf("n%cs", 'a');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 8 ------------\n");
+			ret1 = ft_printf("%c%c%c%c%c", 'a', 'i', 'u', 'e', 'o');
+			write(1, "\n", 1);
+			ret2 = printf("%c%c%c%c%c", 'a', 'i', 'u', 'e', 'o');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 9 ------------\n");
+			ret1 = ft_printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
+			write(1, "\n", 1);
+			ret2 = printf("l%cl%cl%cl%cl%c", 'a', 'i', 'u', 'e', 'o');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 10 ------------\n");
+			ret1 = ft_printf("l%cl%cl%cl%cl%c", '\0', '\0', '\0', 'e', '\0');
+			write(1, "\n", 1);
+			ret2 = printf("l%cl%cl%cl%cl%c", '\0', '\0', '\0', 'e', '\0');
+			printf("\nHere the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+		}
+		/* STRING TEST */
+		{
+			int ret1;
+			int ret2;
+			
+			printf("\n\n------------STRING TESTS------------\n");
+			printf("\n------------ TEST 11 ------------\n");
+			ret1 = ft_printf("%s", "");
+			printf("\n");
+			ret2 = printf("%s", "");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 12 ------------\n");
+			ret1 = ft_printf("this is a %s", "test");
+			printf("\n");
+			ret2 = printf("this is a %s", "test");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 13 ------------\n");
+			ret1 = ft_printf("this is 1 %s with %s %s", "test", "multiple", "strings");
+			printf("\n");
+			ret2 = printf("this is 1 %s with %s %s", "test", "multiple", "strings");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 14 ------------\n");
+			ret1 = ft_printf("%s%s%s%s", "This ", "is", " an ugly ", "test");
+			printf("\n");
+			ret2 = printf("%s%s%s%s", "This ", "is", " an ugly ", "test");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 15 ------------\n");
+			ret1 = ft_printf("%s", "This is a rather simple test.");
+			printf("\n");
+			ret2 = printf("%s", "This is a rather simple test.");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 16 ------------\n");
+			ret1 = ft_printf("%s", "-2");
+			printf("\n");
+			ret2 = ft_printf("%s", "-2");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+				
+			printf("\n------------ TEST 17 ------------\n");
+			ret1 = ft_printf("%s", "-24");
+			printf("\n");
+			ret2 = printf("%s", "-24");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 18 ------------\n");
+			ret1 = ft_printf("%s", "-stop");
+			printf("\n");
+			ret2 = printf("%s", "-stop");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 19 ------------\n");
+			ret1 = ft_printf("%s", "-0003");
+			printf("\n");
+			ret2 = printf("%s", "-0003");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 20 ------------\n");
+			ret1 = ft_printf("%s", "0x42");
+			printf("\n");
+			ret2 = printf("%s", "0x42");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 21 ------------\n");
+			ret1 = ft_printf("%s", "0x0000042");
+			printf("\n");
+			ret2 = printf("%s", "0x0000042");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 22 ------------\n");
+			ret1 = ft_printf("some naugty tests: %s", "0000%");
+			printf("\n");
+			ret2 = printf("some naugty tests: %s", "0000%");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 23 ------------\n");
+			ret1 = ft_printf("some naugty tests: %s", "    %");
+			printf("\n");
+			ret2 = printf("some naugty tests: %s", "    %");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 24 ------------\n");
+			ret1 = ft_printf("some naugty tests: %s", "%000");
+			printf("\n");
+			ret2 = printf("some naugty tests: %s", "%000");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 25 ------------\n");
+			ret1 = ft_printf("%s", "bea thought but bea forgot the loop that the chars cause she was floaty during the amsterdam siren call. she got me by surprise you probably read my mind that look in your eyes and judging by your own cries you probably read my mind this is a really long string and if you see this you must look at your return values!kthxbai this must have more than 127 chars by now isnt it ok 4242 4 life 1337 code everyday to the moon!");
+			printf("\n");
+			ret2 = printf("%s", "bea thought but bea forgot the loop that the chars cause she was floaty during the amsterdam siren call. she got me by surprise you probably read my mind that look in your eyes and judging by your own cries you probably read my mind this is a really long string and if you see this you must look at your return values!kthxbai this must have more than 127 chars by now isnt it ok 4242 4 life 1337 code everyday to the moon!");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 28 (SEGFAULT //handle SIGABRT ERROR)------------\n");
+			char *null_str = NULL;
+			
+			ret1 = ft_printf("%s", null_str);
+			printf("\n");
+			ret2 = printf("%s", null_str);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 29 (SEGFAULT //handle SIGABRT ERROR)------------\n");	
+			ret1 = ft_printf("%s everywhere", null_str);
+			printf("\n");
+			ret2 = printf("%s everywhere", null_str);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 30 (SEGFAULT //handle SIGABRT ERROR)------------\n");	
+			ret1 = ft_printf("everywhere %s", null_str);
+			printf("\n");
+			ret2 = printf("everywhere %s", null_str);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 31 ------------\n");	
+			ret1 = ft_printf("%s", "h");
+			printf("\n");
+			ret2 = printf("%s", "h");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 32 ------------\n");	
+			ret1 = ft_printf("t%st%s", "a", "u");
+			printf("\n");
+			ret2 = printf("t%st%s", "a", "u");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 33 ------------\n");	
+			ret1 = ft_printf("%s%s%s%s%s%s", "a", "i", "u", "e", "o", "l");
+			printf("\n");
+			ret2 = printf("%s%s%s%s%s%s", "a", "i", "u", "e", "o", "l");
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+		}
+		/* POINTER TEST */
+		{
+			int ret1;
+			int ret2;
+			int test = 42;
+			
+			printf("\n\n------------POINTER TESTS------------\n");
+			printf("\n------------ TEST 34 ------------\n");
+			ret1 = ft_printf("%p", &test);
+			printf("\n");
+			ret2 = ft_printf("%p", &test);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 35 ------------\n");	
+			ret1 = ft_printf("%p is a virtual memory address", &test);
+			printf("\n");
+			ret2 = printf("%p is a virtual memory address", &test);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 36 ------------\n");	
+			ret1 = ft_printf("The address of the answer is %p", &test);
+			printf("\n");
+			ret2 = printf("The address of the answer is %p", &test);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 37 ------------\n");	
+			ret1 = ft_printf("The address is %p, so what?", &test);
+			printf("\n");
+			ret2 = printf("The address is %p, so what?", &test);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 38 ------------\n");
+			int *ptr = &test;	
+			
+			ret1 = ft_printf("A pointer at %p points to %p", &test, &ptr);
+			printf("\n");
+			ret2 = printf("A pointer at %p points to %p", &test, &ptr);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 39 (handle SIGABRT ERROR)------------\n");
+			ret1 = ft_printf("This %p is a very strange address", (void *)(long int)test);
+			printf("\n");
+			ret2= printf("This %p is a very strange address", (void *)(long int)test);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 40 (HEAP POINTER)------------\n");
+			char *mallocked = malloc(2);
+			
+			ret1 = ft_printf("This %p is an address from the heap", mallocked); 
+			free(mallocked);
+			printf("\n");
+			mallocked = malloc(2);
+			ret2 = printf("This %p is an address from the heap", mallocked); 
+			free(mallocked);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 41 (handle SIGABRT ERROR)------------\n");
+			ret1 = ft_printf("%p", NULL);
+			printf("\n");
+			ret2 = printf("%p", NULL);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 42 (handle SIGABRT ERROR)------------\n");
+			ret1 = ft_printf("The NULL macro represents the %p address", NULL);
+			printf("\n");
+			ret2 = printf("The NULL macro represents the %p address", NULL);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 43 (handle SIGABRT ERROR)------------\n");
+			ret1 = ft_printf("This %p is even stranger", (void *)-1);
+			printf("\n");
+			ret2 = ft_printf("This %p is even stranger", (void *)-1);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+		}
+		/* DECIMAL TEST */
+		{			
+			int ret1;
+			int ret2;
+			
+			printf("\n\n------------DECIMAL TEST with %%d and %%i------------\n");
+			printf("\n------------ TEST 44 ------------\n");
+			ret1 = ft_printf("%d", 0);
+			printf("\n");
+			ret2 = printf("%d", 0);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 45 ------------\n");
+			ret1 = ft_printf("%d", 10);
+			printf("\n");
+			ret2 = printf("%d", 10);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 46 ------------\n");
+			ret1 = ft_printf("%d, %d", 10, 20);
+			printf("\n");
+			ret2 = printf("%d, %d", 10, 20);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 47 ------------\n");
+			ret1 = ft_printf("%d%d%d%d", 10, 20, 30, 5);
+			printf("\n");
+			ret2 = printf("%d%d%d%d", 10, 20, 30, 5);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 48 ------------\n");
+			ret1 = ft_printf("%d %d", 2147483647, (int)-2147483648);
+			printf("\n");
+			ret2 = printf("%d %d", 2147483647, (int)-2147483648);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 49 ------------\n");
+			ret1 = ft_printf("42 - 84 is %d", -42);
+			printf("\n");
+			ret2 = printf("42 - 84 is %d", -42);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 50 ------------\n");
+			ret1 = ft_printf("%d C is the lowest temperature in the universe", -273);
+			printf("\n");
+			ret2 = printf("%d C is the lowest temperature in the universe", -273);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 51 ------------\n");
+			ret1 = ft_printf("%dxC is the lowest temperature in the universe", -273);
+			printf("\n");
+			ret2 = printf("%dxC is the lowest temperature in the universe", -273);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 52 ------------\n");
+			ret1 = ft_printf("%dsC is the lowest temperature in the universe", -273);
+			printf("\n");
+			ret2 = printf("%dsC is the lowest temperature in the universe", -273);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 53 ------------\n");
+			ret1 = ft_printf("%dpC is the lowest temperature in the universe", -273);
+			printf("\n");
+			ret2 = printf("%dpC is the lowest temperature in the universe", -273);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 54 ------------\n");
+			ret1 = ft_printf("%i", 0);
+			printf("\n");
+			ret2 = printf("%i", 0);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 55 ------------\n");
+			ret1 = ft_printf("%i", 10);
+			printf("\n");
+			ret2 = printf("%i", 10);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 56 ------------\n");
+			ret1 = ft_printf("%i, %i", 10, 23);
+			printf("\n");
+			ret2 = printf("%i, %i", 10, 23);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 57 ------------\n");
+			ret1 = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
+			printf("\n");
+			ret2 = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 58 ------------\n");
+			ret1 = ft_printf("%i %i", 2147483647, (int)-2147483648);
+			printf("\n");
+			ret2 = printf("%i %i", 2147483647, (int)-2147483648);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+				
+			printf("\n------------ TEST 59 ------------\n");
+			ret1 = ft_printf("%iq%i", 21447, -21648);
+			printf("\n");
+			ret2 = printf("%iq%i", 21447, -21648);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+		}
+		/* UNSIGNED TEST */
+		{
+			int ret1;
+			int ret2;
+			
+			printf("\n\n------------UNSIGNED INT TEST with %%u ------------\n");
+			printf("\n------------ TEST 60 ------------\n");
+			ret1 = ft_printf("%u", 42);
+			printf("\n");
+			ret2 = printf("%u", 42);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 61 ------------\n");
+			ret1 = ft_printf("%u", 0);
+			printf("\n");
+			ret2 = printf("%u", 0);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 62 ------------\n");
+			ret1 = ft_printf("%u", 2147483647);
+			printf("\n");
+			ret2 = printf("%u", 2147483647);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 63 ------------\n");
+			ret1 = ft_printf("%u", (unsigned int)2147483648);
+			printf("\n");
+			ret2 = printf("%u", (unsigned int)2147483648);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 64 ------------\n");
+			ret1 = ft_printf("%u", (unsigned int)3147983649);
+			printf("\n");
+			ret2 = printf("%u", (unsigned int)3147983649);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+			
+			printf("\n------------ TEST 65 ------------\n");
+			ret1 = ft_printf("%u", (unsigned int)4294967295);
+			printf("\n");
+			ret2 = printf("%u", (unsigned int)4294967295);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 66 ------------\n");
+			ret1 = ft_printf("%u to the power of %u is %u", 2, 32, (unsigned int)4294967295);
+			printf("\n");
+			ret2 = printf("%u to the power of %u is %u", 2, 32, (unsigned int)4294967295);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+
+			printf("\n------------ TEST 67 ------------\n");
+			ret1 = ft_printf("%u %u %u %u", (unsigned int)429896724, 0, 32, (unsigned int)4294967295);
+			printf("\n");
+			ret2 = printf("%u %u %u %u", (unsigned int)429896724, 0, 32, (unsigned int)4294967295);
+			printf("\n");
+			printf("Here the return of ft_printf: 	%d\n", ret1);
+			printf("Here the return of printf: 	%d\n", ret2);
+		}
+	}
+
+
+	
+	
+	
+	
 
 	// printf("\n\n------------LOWERCASE HEX TEST with %%x ------------\n");
 	// printf("\n------------ TEST 68 ------------\n");
