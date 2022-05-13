@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:12:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 17:21:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/13 11:42:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	ft_check_mods(t_input *input, t_mod *mods)
 		mods->space = 1;
 	if (mods->spec == '#')
 		mods->hash = 1;
-
-	//then check the width
+		
+	// //then check the width and precision in combination
 	if (ft_isdigit(mods->spec) == 1)
 	{
 		mods->width = 1;
@@ -46,7 +46,11 @@ void	ft_check_mods(t_input *input, t_mod *mods)
 	}
 	//then check the precision
 	if (mods->spec == '.')
+	{
 		mods->precision = 1;
-
+		mods->prec_pads = mods->pads;
+		mods->width = 0;
+		mods->pads = 0;
+	}
 	//exceptions
 }

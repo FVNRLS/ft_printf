@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/12 18:59:43 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/13 13:47:10 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_mod
 	char	spec; //format spec
 	
 	int		pads;
+	int		prec_pads;
 }			t_mod;
 
 typedef struct s_input
@@ -69,6 +70,7 @@ char	*ft_strchr(const char *s, int c);
 void	ft_putstr(char *str, t_input *input);
 void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
+void	ft_print_prec_pads(t_input *input, t_mod *mods);
 char	*ft_itoa_dec(int n);
 int		ft_arg_is_last(t_input *input);
 char	*ft_itoa_ptr(unsigned long n);

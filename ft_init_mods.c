@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:12 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 19:21:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:57:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_init_mods(t_mod *mods)
 	
 	mods->spec = 0;
 	mods->pads = 0;
+	mods->prec_pads = 0;
 }
