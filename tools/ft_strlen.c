@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:47:46 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 18:57:18 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:30:22 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i])

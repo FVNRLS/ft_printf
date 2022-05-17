@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/13 13:47:10 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:29:43 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_print_uint(t_input *input, t_mod *mods);
 
 //TOOLS
 int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 void	ft_putstr(char *str, t_input *input);
 void	ft_print_pads(t_input *input, t_mod *mods);

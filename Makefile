@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/12 15:18:43 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/05/13 16:55:43 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SRC 	= 		ft_printf.c 				\
 all: $(NAME)
 
 $(NAME): *.c
-	Make -C ./libft
+	make -C ./libft
 	cp ./libft/libft.a $(NAME)
 	$(CC) $(FLAGS) -c $(SRC)
 	ar rc $(NAME) *.o
