@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_mods.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:12 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/13 10:57:35 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:51:21 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	ft_init_mods(t_mod *mods)
 	mods->space = 0;
 	mods->hash = 0;
 	mods->width = 0;
-	mods->precision = 0;
+	mods->prec = 0;
 	
 	mods->spec = 0;
 	mods->pads = 0;
 	mods->prec_pads = 0;
+	mods->is_string = 0;
 }

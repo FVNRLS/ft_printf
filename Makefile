@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/13 16:55:43 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/05/17 21:00:28 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ SRC 	= 		ft_printf.c 				\
 				./tools/ft_itoa_ptr.c		\
 				./tools/ft_itoa_hex.c		\
 				./tools/ft_itoa_uint.c		\
+				./tools/ft_apply_mods.c		\
+
 				
 all: $(NAME)
 

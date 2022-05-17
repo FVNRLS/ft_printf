@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:57:21 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 15:46:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:14:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	ft_printhex(t_input *input, t_mod *mods)
 		mods->minus = 0;
 		mods->zero = 0;
 	}
-	if (mods->precision == 1)
+	if (mods->prec == 1)
 		mods->zero = 0;
-	if (mods->hash == 1 && mods->precision == 0)
+	if (mods->hash == 1 && mods->prec == 0)
 		mods->pads -= 2;
 	
 	//count num of chars in str and include them to pads calc
@@ -51,26 +51,26 @@ void	ft_printhex(t_input *input, t_mod *mods)
 		mods->pads = 0;
 	
 	//blank padding
-	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 0)
+	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 0)
 	{
 		ft_print_pads(input, mods);
 		if (mods->hash == 1)
 			ft_write_hash(input, mods);
-		ft_putstr(str, input);
+		ft_putstr(str, input, mods);
 	}
-	else if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->precision == 1)
+	else if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 1)
 	{
 		if (mods->hash == 1)
 			ft_write_hash(input, mods);
 		ft_print_zeropads(input, mods);
-		ft_putstr(str, input);
+		ft_putstr(str, input, mods);
 	}
 	//left adjustment with padding
 	else if (mods->minus == 1 && mods->width == 1)
 	{	
 		if (mods->hash == 1)
 			ft_write_hash(input, mods);
-		ft_putstr(str, input);
+		ft_putstr(str, input, mods);
 		ft_print_pads(input, mods);
 	}
 	//zero padding
@@ -79,12 +79,12 @@ void	ft_printhex(t_input *input, t_mod *mods)
 		ft_print_zeropads(input, mods);
 		if (mods->hash == 1)
 			ft_write_hash(input, mods);
-		ft_putstr(str, input);
+		ft_putstr(str, input, mods);
 	}
 	//no modifiers
 	if (mods->minus == 0 && mods->width == 0 && mods->zero == 0 
-		&& mods->hash == 0 && mods->precision == 0)
-		ft_putstr(str, input);
+		&& mods->hash == 0 && mods->prec == 0)
+		ft_putstr(str, input, mods);
 	free(str);
 	str = NULL;
 }

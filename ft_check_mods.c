@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_mods.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:12:19 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/13 11:42:31 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:14:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_check_mods(t_input *input, t_mod *mods)
 	//then check the precision
 	if (mods->spec == '.')
 	{
-		mods->precision = 1;
+		mods->prec = 1;
 		mods->prec_pads = mods->pads;
 		mods->width = 0;
 		mods->pads = 0;

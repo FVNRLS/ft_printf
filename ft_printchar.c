@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:56:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/11 17:55:25 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:36:31 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,19 @@ void	ft_printchar(t_input *input, t_mod *mods)
 		c = '%';
 	else
 		c = va_arg(input->arg, int);
-	//exceptions handling if '-' and '0' flag are set
+	mods->pads -= 1;
 	if (mods->minus == 1)
-		mods->zero = 0;
-	//zero padding
+	{
+		write(1, &c, 1);
+		ft_print_pads(input, mods);
+		input->ret_nbr++;
+		return ;
+	}
 	if (mods->zero == 1 && mods->width == 1)
-	{
 		ft_print_zeropads(input, mods);
-		write(1, &c, 1);
-	}
-	//blank padding
 	else if (mods->minus == 0 && mods->width == 1)
-	{
 		ft_print_pads(input, mods);
-		write(1, &c, 1);
-	}
-	//left adjustment with padding
-	else if (mods->minus == 1 && mods->width == 1)
-	{
-		write(1, &c, 1);
-		ft_print_pads(input, mods);
-	}
-	//no modifiers
-	else if (mods->minus == 0 && mods->width == 0 && mods->zero == 0)
-		write(1, &c, 1);
+	write(1, &c, 1);
 	input->ret_nbr++;
 }
+

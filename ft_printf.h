@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/17 10:29:43 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:52:04 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ typedef struct s_mod
 	int		space;
 	int		hash;
 	int		width;
-	int		precision;
+	int		prec;
 	
 	char	spec; //format spec
 	
 	int		pads;
 	int		prec_pads;
+	int		is_string;
 }			t_mod;
 
 typedef struct s_input
@@ -67,7 +68,7 @@ void	ft_print_uint(t_input *input, t_mod *mods);
 int		ft_isdigit(int c);
 int		ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-void	ft_putstr(char *str, t_input *input);
+void	ft_putstr(char *str, t_input *input, t_mod *mods);
 void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
 void	ft_print_prec_pads(t_input *input, t_mod *mods);
@@ -77,5 +78,8 @@ char	*ft_itoa_ptr(unsigned long n);
 char	*ft_itoa_hex(unsigned long n, t_mod *mods);
 char	*ft_itoa_uint(unsigned int nbr);
 size_t	ft_count_size_hex(unsigned long n);
+void	ft_ajust_mods(t_mod *mods);
+void	ft_apply_mods(t_input *input, t_mod *mods, char *str, int len);
+
 
 #endif
