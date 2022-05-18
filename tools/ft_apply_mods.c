@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 14:49:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:59:23 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ void	ft_ajust_mods(t_mod *mods)
 	if (mods->hash == 1 && mods->prec == 0)
 		mods->pads -= 2;
 	if (mods->plus == 1)
-	{
-		mods->space = 0;
 		mods->pads--;
-	}
 	if (mods->space == 1)
 		mods->pads--;
 	if (mods->is_negative == 1 && mods->prec == 0)
