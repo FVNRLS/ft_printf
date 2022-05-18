@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 18:58:33 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:33:03 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,13 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 {
 	if (mods->is_string == 1 && mods->prec == 1)
 	{
-		if (mods->prec_pads < mods->pads && mods->pads > len && mods->minus == 1)
-			mods->prec_pads -= len;
-		else
+		// if (mods->prec_pads < mods->pads && mods->pads > len && mods->minus == 1)
+		if (mods->minus == 1 && mods->prec_pads > mods->pads)
 			mods->prec_pads -= mods->pads;
+		else
+			mods->prec_pads -= len;
+		// else
+		// 	mods->prec_pads -= mods->pads;
 	}
 	else if (mods->is_ptr == 1)
 		mods->pads -= (len + 2);
@@ -57,10 +60,17 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 
 void	ft_apply_prec_mods(t_input *input, t_mod *mods, char *str)
 {
-	if (mods->is_string == 1)
-	{
-		ft_putstr(str, input, mods);
-		ft_print_prec_pads(input, mods);
+	if (mods->is_string == 1) //TODO: fix string behaviour!
+	{	if (mods->minus == 1)
+		{
+			ft_putstr(str, input, mods);
+			ft_print_prec_pads(input, mods);
+		}
+		else if (mods->minus == 0)
+		{
+			ft_print_prec_pads(input, mods);
+			ft_putstr(str, input, mods);
+		}
 	}	
 	else if (mods->minus == 0 && mods->prec == 1)
 	{

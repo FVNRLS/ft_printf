@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 18:38:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:35:09 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1321,9 +1321,9 @@ int main(void)
 	int	ret2;
 	
 	printf("\nSMALL TEST\n");
-	ret1 =ft_printf("%7.5s", "yolo");
+	ret1 =ft_printf("%-7.5s", "tubular");
 	printf("\n");
-	ret2 =printf("%7.5s", "yolo");
+	ret2 =printf("%-7.5s", "tubular");
 	printf("\n");
 	printf("Here the return of ft_printf: 	%d\n", ret1);
 	printf("Here the return of printf: 	%d\n", ret2);
