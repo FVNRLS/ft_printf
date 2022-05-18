@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 11:18:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:00:48 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 		else
 			mods->prec_pads -= mods->pads;
 	}
-	else if (mods->is_ptr == 1) //TODO: (nil) --> how to fix???
+	else if (mods->is_ptr == 1)
 		mods->pads -= (len + 2);
 	else if (mods->prec_pads == 0)
 		mods->pads -= len;
@@ -48,7 +48,7 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 			mods->prec_pads -= len;
 		else
 			mods->prec_pads -= mods->pads;
-		mods->pads -= (ft_strlen(str));
+		mods->pads -= len;
 	}
 }
 
@@ -79,14 +79,14 @@ void	ft_apply_noprec_mods(t_input *input, t_mod *mods, char *str)
 	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 0)
 	{
 		ft_print_pads(input, mods);
-		ft_apply_hash_prefix(input, mods);
+		ft_apply_prefix(input, mods);
 		ft_putstr(str, input, mods);
 	}
 
 	//left adjustment with padding without prec prefix (digit before '.')
 	if (mods->minus == 1 && mods->prec == 0)
 	{	
-		ft_apply_hash_prefix(input, mods);
+		ft_apply_prefix(input, mods);
 		ft_putstr(str, input, mods);
 		ft_print_pads(input, mods);
 	}
@@ -96,14 +96,14 @@ void	ft_apply_noprec_mods(t_input *input, t_mod *mods, char *str)
 	if (mods->zero == 1 && mods->width == 1)
 	{
 		ft_print_zeropads(input, mods);
-		ft_apply_hash_prefix(input, mods);
+		ft_apply_prefix(input, mods);
 		ft_putstr(str, input, mods);
 	}
 	//no modifiers
 	if (mods->minus == 0 && mods->width == 0 && mods->zero == 0 
 		&& mods->prec == 0 && mods->hash == 0 && mods->space == 0 && mods->plus == 0)
 	{
-		ft_apply_hash_prefix(input, mods);
+		ft_apply_prefix(input, mods);
 		ft_putstr(str, input, mods);
 	}
 }

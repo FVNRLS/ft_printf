@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printptr.c                                      :+:      :+:    :+:   */
+/*   ft_apply_prefix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 17:01:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 11:53:51 by rmazurit         ###   ########.fr       */
+/*   Created: 2022/05/18 11:52:55 by rmazurit          #+#    #+#             */
+/*   Updated: 2022/05/18 11:57:19 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_printptr(t_input *input, t_mod *mods)
+void	ft_apply_prefix(t_input *input, t_mod *mods)
 {
-	unsigned long	ptr;
-	char			*str;
-	int				len;
-
-	mods->is_ptr = 1;
-	ptr = (unsigned long)va_arg(input->arg, void*);
-	str = ft_itoa_ptr(ptr);
-	len = ft_strlen(str);
-	ft_apply_mods(input, mods, str, len);
-	free(str);
-	str = NULL;
+	if (mods->hash == 1 || mods->is_ptr == 1)
+	{
+		if (mods->spec == 'x' || mods->is_ptr == 1)
+			write(1, "0x", 2);
+		else if (mods->spec == 'X')
+			write(1, "0X", 2);
+		input->ret_nbr += 2;
+	}
 }

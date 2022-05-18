@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/18 11:14:58 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:59:28 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ char	*ft_itoa_uint(unsigned int nbr);
 size_t	ft_count_size_hex(unsigned long n);
 void	ft_ajust_mods(t_mod *mods);
 void	ft_apply_mods(t_input *input, t_mod *mods, char *str, int len);
-void	ft_apply_hash_prefix(t_input *input, t_mod *mods);
-
+void	ft_apply_prefix(t_input *input, t_mod *mods);
 
 
 #endif

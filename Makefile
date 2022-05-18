@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+         #
+#    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/17 21:00:28 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/05/18 12:01:17 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,8 @@ CC 		= 		gcc
 FLAGS	= 		-Wall -Wextra -Werror
 
 SRC 	= 		ft_printf.c 				\
-				ft_init_mods.c				\
-				ft_parse.c					\
+				ft_parse_convert.c			\
 				ft_check_mods.c				\
-				ft_convert.c 				\
 				ft_printchar.c				\
 				ft_printstr.c				\
 				ft_printint.c				\
@@ -38,6 +36,7 @@ SRC 	= 		ft_printf.c 				\
 				./tools/ft_itoa_hex.c		\
 				./tools/ft_itoa_uint.c		\
 				./tools/ft_apply_mods.c		\
+				./tools/ft_apply_prefix.c	\
 
 				
 all: $(NAME)
