@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:09:17 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 13:24:11 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:32:17 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ char	*ft_itoa_hex(unsigned long n, t_mod *mods)
 	char	*hex_base;
 	size_t	size;
 	
-	if (n == 0)
-	{
-		str = (malloc(sizeof(char) * 2));
-		if (!str)
-			return (NULL);
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
 	if (mods->spec == 'x')
 		hex_base = HEX_BASE_LOWERCASE;
 	else if (mods->spec == 'X')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testing_header.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:56:57 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/17 20:52:32 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:29:29 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@
 
 /* INIT AND PARSING*/
 # include "../ft_printf.c"
-# include "../ft_init_mods.c"
-# include "../ft_parse.c"
+# include "../ft_parse_convert.c"
 # include "../ft_check_mods.c"
-# include "../ft_convert.c"
 
 /* CONVERSIONS */
 # include "../ft_printchar.c"
@@ -44,5 +42,6 @@
 # include "../tools/ft_itoa_hex.c"
 # include "../tools/ft_itoa_uint.c"
 # include "../tools/ft_apply_mods.c"
+# include "../tools/ft_apply_prefix.c"
 
 #endif

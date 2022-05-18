@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 14:59:23 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:58:33 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,27 @@
 
 void	ft_ajust_mods(t_mod *mods)
 {
-	if (mods->minus == 1)
-		mods->zero = 0;
 	if (mods->width == 0)
 		mods->minus = 0;
-	if (mods->width == 0 && mods->prec_pads == 1)
-		mods->zero = 0;
-	if (mods->prec == 1)
+	if (mods->width == 0 || mods->prec == 1 || mods->minus == 1)
 		mods->zero = 0;
 	if (mods->pads == 0)
 		mods->width = 0;
 	if (mods->hash == 1 && mods->prec == 0)
 		mods->pads -= 2;
-	if (mods->plus == 1)
-		mods->pads--;
 	if (mods->space == 1)
-		mods->pads--;
-	if (mods->is_negative == 1 && mods->prec == 0)
 		mods->pads--;
 	if (mods->is_negative == 1)
 		mods->space = 0;
+	if (mods->is_negative == 1 && mods->prec == 0)
+		mods->pads--;
 }
 
 void	ft_ajust_pads(t_mod *mods, char *str, int len)
 {
 	if (mods->is_string == 1 && mods->prec == 1)
 	{
-		if (mods->prec_pads < mods->pads && mods->pads > len)
+		if (mods->prec_pads < mods->pads && mods->pads > len && mods->minus == 1)
 			mods->prec_pads -= len;
 		else
 			mods->prec_pads -= mods->pads;
@@ -86,46 +80,29 @@ void	ft_apply_prec_mods(t_input *input, t_mod *mods, char *str)
 
 void	ft_apply_noprec_mods(t_input *input, t_mod *mods, char *str)
 {
-
-	//hash and plus without precision
-	if (mods->hash == 1 || mods->plus == 1 || mods->space == 1)
-	{	
-		
-		ft_apply_prefix(input, mods, str);
-		ft_putstr(str, input, mods);
-	}
-	
-	//blank padding without precision
-	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 0)
-	{
-		ft_print_pads(input, mods);
-		ft_apply_prefix(input, mods, str);
-		ft_putstr(str, input, mods);
-	}
-
-	//left adjustment with padding without prec prefix (digit before '.')
 	if (mods->minus == 1 && mods->prec == 0)
 	{	
 		ft_apply_prefix(input, mods, str);
 		ft_putstr(str, input, mods);
 		ft_print_pads(input, mods);
+		return ;
 	}
-	//left adjustment with padding with prec prefix (digit before '.')
-	
-	//zero padding
+	if (mods->hash == 1 || mods->plus == 1 || mods->space == 1)
+		ft_apply_prefix(input, mods, str);
+	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 0)
+	{
+		ft_print_pads(input, mods);
+		ft_apply_prefix(input, mods, str);
+	}
 	if (mods->zero == 1 && mods->width == 1)
 	{
 		ft_apply_prefix(input, mods, str);
 		ft_print_zeropads(input, mods);
-		ft_putstr(str, input, mods);
 	}
-	//no modifiers
 	if (mods->minus == 0 && mods->width == 0 && mods->zero == 0 
 		&& mods->prec == 0 && mods->hash == 0 && mods->space == 0 && mods->plus == 0)
-	{
 		ft_apply_prefix(input, mods, str);
-		ft_putstr(str, input, mods);
-	}
+	ft_putstr(str, input, mods);
 }
 
 
