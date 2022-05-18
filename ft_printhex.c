@@ -3,88 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:57:21 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/17 21:14:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:20:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_write_hash(t_input *input, t_mod *mods)
+void	ft_apply_hash_prefix(t_input *input, t_mod *mods)
 {
-	if (mods->spec == 'x')
-		write(1, "0x", 2);
-	else if (mods->spec == 'X')
-		write(1, "0X", 2);
-	input->ret_nbr += 2;
+	if (mods->hash == 1 || mods->is_ptr == 1)
+	{
+		if (mods->spec == 'x' || mods->is_ptr == 1)
+			write(1, "0x", 2);
+		else if (mods->spec == 'X')
+			write(1, "0X", 2);
+		if (mods->is_ptr == 0)
+			input->ret_nbr += 2;
+	}
 }
 
 void	ft_printhex(t_input *input, t_mod *mods)
 {
 	unsigned long	nbr;
 	char			*str;
-	char			res_pads;
+	int				len;
 
 	nbr = va_arg(input->arg, unsigned long);
 	str = ft_itoa_hex(nbr, mods);
+	len = ft_strlen(str);
+	ft_ajust_mods(mods);
+	ft_apply_mods(input, mods, str, len);
 
-	//adjust mods
-	if (mods->minus == 1)
-		mods->zero = 0;
-	if (mods->width == 0)
-	{
-		mods->minus = 0;
-		mods->zero = 0;
-	}
-	if (mods->prec == 1)
-		mods->zero = 0;
-	if (mods->hash == 1 && mods->prec == 0)
-		mods->pads -= 2;
-	
-	//count num of chars in str and include them to pads calc
-	res_pads = ((mods->pads - ft_strlen(str)) + 1);
-	if (res_pads > 0)
-		mods->pads = res_pads;
-	else
-		mods->pads = 0;
-	
-	//blank padding
-	if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 0)
-	{
-		ft_print_pads(input, mods);
-		if (mods->hash == 1)
-			ft_write_hash(input, mods);
-		ft_putstr(str, input, mods);
-	}
-	else if (mods->minus == 0 && mods->width == 1 && mods->zero == 0 && mods->prec == 1)
-	{
-		if (mods->hash == 1)
-			ft_write_hash(input, mods);
-		ft_print_zeropads(input, mods);
-		ft_putstr(str, input, mods);
-	}
-	//left adjustment with padding
-	else if (mods->minus == 1 && mods->width == 1)
-	{	
-		if (mods->hash == 1)
-			ft_write_hash(input, mods);
-		ft_putstr(str, input, mods);
-		ft_print_pads(input, mods);
-	}
-	//zero padding
-	else if (mods->zero == 1 && mods->width == 1)
-	{
-		ft_print_zeropads(input, mods);
-		if (mods->hash == 1)
-			ft_write_hash(input, mods);
-		ft_putstr(str, input, mods);
-	}
-	//no modifiers
-	if (mods->minus == 0 && mods->width == 0 && mods->zero == 0 
-		&& mods->hash == 0 && mods->prec == 0)
-		ft_putstr(str, input, mods);
 	free(str);
 	str = NULL;
 }

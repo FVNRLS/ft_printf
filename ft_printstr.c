@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:39:30 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/17 22:44:47 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:01:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ void	ft_printstr(t_input *input, t_mod *mods)
 	mods->is_string = 1;
 	str = va_arg(input->arg, char *);
 	if (str == NULL)
-	{
 		str = "(null)";
-		if (mods->prec == 1 && mods->pads < ft_strlen(str))
-			return ;
-	}
 	len = ft_strlen(str);
 	ft_ajust_mods(mods);
 	ft_apply_mods(input, mods, str, len);
