@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/18 11:59:28 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:44:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_mod
 	int		prec_pads;
 	int		is_string;
 	int		is_ptr;
+	int		is_negative;
 }			t_mod;
 
 typedef struct s_input

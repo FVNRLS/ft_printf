@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 11:43:54 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:45:44 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_init_mods(t_mod *mods)
 	mods->prec_pads = 0;
 	mods->is_string = 0;
 	mods->is_ptr = 0;
+	mods->is_negative = 0;
 }
 
 void	ft_convert(t_input *input, t_mod *mods)

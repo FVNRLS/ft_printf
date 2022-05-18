@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:52:55 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 11:57:19 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 12:37:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,15 @@ void	ft_apply_prefix(t_input *input, t_mod *mods)
 		else if (mods->spec == 'X')
 			write(1, "0X", 2);
 		input->ret_nbr += 2;
+	}
+	if (mods->is_negative == 1)
+	{
+		write(1, "-", 1);
+		input->ret_nbr++;
+	}
+	if (mods->plus == 1)
+	{
+		write(1, "+", 1);
+		input->ret_nbr++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 12:00:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:35:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_ajust_mods(t_mod *mods)
 {
-	//adjust mods
 	if (mods->minus == 1)
 		mods->zero = 0;
 	if (mods->width == 0)
@@ -27,6 +26,15 @@ void	ft_ajust_mods(t_mod *mods)
 		mods->width = 0;
 	if (mods->hash == 1 && mods->prec == 0)
 		mods->pads -= 2;
+	if (mods->plus == 1)
+	{
+		mods->space = 0;
+		mods->pads--;
+	}
+	if (mods->space == 1)
+		mods->pads--;
+	if (mods->is_negative == 1 && mods->prec == 0)
+		mods->pads--;
 }
 
 void	ft_ajust_pads(t_mod *mods, char *str, int len)
@@ -44,6 +52,8 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 		mods->pads -= len;
 	else if (mods->prec_pads > 0 && mods->is_string == 0)
 	{
+		if (mods->is_negative == 1)
+			mods->prec_pads--;
 		if (mods->prec_pads > mods->pads && mods->pads <= len && str[0] != '0')
 			mods->prec_pads -= len;
 		else
@@ -53,20 +63,22 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 }
 
 void	ft_apply_prec_mods(t_input *input, t_mod *mods, char *str)
-{	
+{
 	if (mods->is_string == 1)
 	{
 		ft_putstr(str, input, mods);
 		ft_print_prec_pads(input, mods);
-	}
+	}	
 	else if (mods->minus == 0 && mods->prec == 1)
 	{
 		ft_print_prec_pads(input, mods);
+		ft_apply_prefix(input, mods);
 		ft_print_zeropads(input, mods);
 		ft_putstr(str, input, mods);
 	}
 	else if (mods->minus == 1 && mods->prec == 1)
 	{	
+		ft_apply_prefix(input, mods);
 		ft_print_zeropads(input, mods);
 		ft_putstr(str, input, mods);
 		ft_print_prec_pads(input, mods);
@@ -95,8 +107,8 @@ void	ft_apply_noprec_mods(t_input *input, t_mod *mods, char *str)
 	//zero padding
 	if (mods->zero == 1 && mods->width == 1)
 	{
-		ft_print_zeropads(input, mods);
 		ft_apply_prefix(input, mods);
+		ft_print_zeropads(input, mods);
 		ft_putstr(str, input, mods);
 	}
 	//no modifiers
