@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:43:55 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 13:54:14 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:24:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_printint(t_input *input, t_mod *mods)
 	int		nbr;
 	char	*str;
 	int		len;
-	
+
 	nbr = va_arg(input->arg, int);
 	if (nbr < 0)
 	{

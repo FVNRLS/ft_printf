@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 12:12:07 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:21:07 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_convert(t_input *input, t_mod *mods)
 	else if (mods->spec == 's')
 		ft_printstr(input, mods);
 	else if (mods->spec == 'i' || mods->spec == 'd')
-	 	ft_printint(input, mods);
+		ft_printint(input, mods);
 	else if (mods->spec == 'p')
 		ft_printptr(input, mods);
 	else if (mods->spec == 'x' || mods->spec == 'X')
@@ -80,7 +80,7 @@ void	ft_parse(t_input *input, t_mod *mods)
 			}
 			if (ft_strchr(FORM_SPECS, input->format[input->pos]))
 				ft_convert(input, mods);
-			ft_init_mods(mods); 
+			ft_init_mods(mods);
 		}
 		input->pos++;
 	}

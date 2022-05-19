@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:47 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 12:39:58 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:23:29 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	ft_printf(const char *format, ...)
 	t_mod	mods;
 	t_input	input;
 
-	va_start(arg, format); 
-	ft_init_input(&input, format, arg); 
+	va_start(arg, format);
+	ft_init_input(&input, format, arg);
 	ft_init_mods(&mods);
 	ft_parse(&input, &mods);
 	va_end(arg);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:01:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 12:30:14 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:25:12 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_printptr(t_input *input, t_mod *mods)
 	int				len;
 
 	mods->is_ptr = 1;
-	ptr = (unsigned long)va_arg(input->arg, void*);
+	ptr = (unsigned long)va_arg(input->arg, void *);
 	str = ft_itoa_ptr(ptr);
 	len = ft_strlen(str);
 	ft_apply_mods(input, mods, str, len);

@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:20:01 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 12:33:13 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:22:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,3 @@ void	ft_print_uint(t_input *input, t_mod *mods)
 	free(str);
 	str = NULL;
 }
-
-		

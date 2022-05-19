@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:56:02 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 12:57:21 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:22:54 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ void	ft_printchar(t_input *input, t_mod *mods)
 		if (mods->zero == 1 && mods->width == 1)
 			ft_print_zeropads(input, mods);
 		else if (mods->minus == 0 && mods->width == 1)
-			ft_print_pads(input, mods);	
+			ft_print_pads(input, mods);
 	}
 	write(1, &c, 1);
 	input->ret_nbr++;
 }
-

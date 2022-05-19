@@ -6,7 +6,7 @@
 #    By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/19 11:39:57 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/05/19 14:35:56 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,6 @@ fclean: clean
 
 re: fclean $(NAME)
 
-bonus: re
+bonus: all
 
 .PHONY: all clean fclean re bonus

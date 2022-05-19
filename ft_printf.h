@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/19 12:33:57 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:26:55 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include <limits.h>
+# include <limits.h>
 # include <stdio.h>
 
 # define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
@@ -33,10 +33,8 @@ typedef struct s_mod
 	int		space;
 	int		hash;
 	int		width;
-	int		prec;
-	
+	int		prec;	
 	char	spec;
-	
 	int		pads;
 	int		is_negative;
 	int		prec_pads;
@@ -82,6 +80,5 @@ char	*ft_itoa_uint(unsigned int nbr);
 size_t	ft_count_size_hex(unsigned long n);
 void	ft_apply_mods(t_input *input, t_mod *mods, char *str, int len);
 void	ft_apply_prefix(t_input *input, t_mod *mods, char *str);
-
 
 #endif
