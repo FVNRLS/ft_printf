@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_convert.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 17:26:43 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 12:45:44 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 10:03:33 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ void	ft_convert(t_input *input, t_mod *mods)
 
 void	ft_parse(t_input *input, t_mod *mods)
 {
-	
-
 	while (input->format[input->pos])
 	{
 		if (input->format[input->pos] != '%') //if input on pos is not % sign -- write it
