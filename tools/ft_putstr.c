@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 18:34:37 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 11:54:39 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:37:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(char *str, t_input *input, t_mod *mods)
 {
 	int	i;
 	int	len;
-	
+
 	i = 0;
 	len = ft_strlen(str);
 	if (mods->is_string == 1 && mods->prec == 1)
@@ -30,8 +30,7 @@ void	ft_putstr(char *str, t_input *input, t_mod *mods)
 			return ;
 		while (i < len && str[i] != '\0')
 		{
-			write(1, &str[i], 1);
-			i++;		
+			write(1, &str[i++], 1);
 			input->ret_nbr++;
 		}
 	}
@@ -39,8 +38,7 @@ void	ft_putstr(char *str, t_input *input, t_mod *mods)
 	{
 		while (str[i] != '\0')
 		{
-			write(1, &str[i], 1);
-			i++;
+			write(1, &str[i++], 1);
 			input->ret_nbr++;
 		}
 	}

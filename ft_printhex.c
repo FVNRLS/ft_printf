@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:57:21 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 14:24:20 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:26:45 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void	ft_printhex(t_input *input, t_mod *mods)
 	}
 	len = ft_strlen(str);
 	if (len > 8)
-	{
-		write(1, "ffffffff", 8);
+	{	
+		if (mods->spec == 'x')
+			write(1, "ffffffff", 8);
+		else
+			write(1, "FFFFFFFF", 8);
 		input->ret_nbr += 8;
 	}
 	else

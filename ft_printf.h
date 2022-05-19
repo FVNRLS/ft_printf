@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/19 14:26:55 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:25:01 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include <limits.h>
 # include <stdio.h>
 
-# define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
+# include "ft_printf_bonus.h"
+
 # define FORM_SPECS			"cspdiouxX%%"
-# define FORM_MODS			"#-+ .*0123456789"
 # define HEX_BASE_LOWERCASE	"0123456789abcdef"
 # define HEX_BASE_UPPERCASE	"0123456789ABCDEF"
 

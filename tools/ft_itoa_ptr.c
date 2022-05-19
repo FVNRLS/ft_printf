@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:53:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 11:46:50 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:45:36 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ char	*ft_itoa_ptr(unsigned long n)
 		size--;
 	while (n > 0)
 	{
-		str[size] = HEX_BASE_LOWERCASE[n % 16];
+		str[size--] = HEX_BASE_LOWERCASE[n % 16];
 		n /= 16;
-		size--;
 	}
 	return (str);
 }
