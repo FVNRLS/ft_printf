@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/18 16:05:57 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:33:57 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
+#include <limits.h>
 # include <stdio.h>
 
 # define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
@@ -35,13 +35,13 @@ typedef struct s_mod
 	int		width;
 	int		prec;
 	
-	char	spec; //format spec
+	char	spec;
 	
 	int		pads;
+	int		is_negative;
 	int		prec_pads;
 	int		is_string;
 	int		is_ptr;
-	int		is_negative;
 }			t_mod;
 
 typedef struct s_input
@@ -76,12 +76,10 @@ void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
 void	ft_print_prec_pads(t_input *input, t_mod *mods);
 char	*ft_itoa_dec(int n);
-int		ft_arg_is_last(t_input *input);
 char	*ft_itoa_ptr(unsigned long n);
 char	*ft_itoa_hex(unsigned long n, t_mod *mods);
 char	*ft_itoa_uint(unsigned int nbr);
 size_t	ft_count_size_hex(unsigned long n);
-void	ft_ajust_mods(t_mod *mods);
 void	ft_apply_mods(t_input *input, t_mod *mods, char *str, int len);
 void	ft_apply_prefix(t_input *input, t_mod *mods, char *str);
 

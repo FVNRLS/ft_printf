@@ -3,34 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:48:47 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/10 11:23:19 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:39:58 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
+	Initializes flags from t_input to 0.
+*/
 static void	ft_init_input(t_input *input, const char *format, va_list arg)
 {
 	input->format = format;
 	va_copy(input->arg, arg);
-	// va_end(arg);
 	input->ret_nbr = 0;
 	input->pos = 0;
 }
 
+/*
+	Processes arguments one by one:
+	Processes argument to the struct and initialize the 2 structs and inits:
+		- format mods to 0.
+		- other flags (position, return number) to 0.
+	Parses the arguments into the ft_parse function.
+	Performs the actions until (incl.) the last argument.
+	Returns the total number of printed characters.
+	
+*/
 int	ft_printf(const char *format, ...)
 {
 	va_list	arg;
 	t_mod	mods;
 	t_input	input;
 
-	va_start(arg, format); //start processing arguments
-	ft_init_input(&input, format, arg); //process the argument to the struct and initialize the struct elements to 0 
-	ft_init_mods(&mods); //initialize all format modifiers to 0 (except precision)
-	ft_parse(&input, &mods); //parse the io struct and starting modifiers and convert the arguments
-	va_end(arg); //stop processing arguments
-	return (input.ret_nbr); //return the number of printed characters
+	va_start(arg, format); 
+	ft_init_input(&input, format, arg); 
+	ft_init_mods(&mods);
+	ft_parse(&input, &mods);
+	va_end(arg);
+	return (input.ret_nbr);
 }

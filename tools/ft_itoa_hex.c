@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:09:17 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 17:32:17 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:46:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
+/*
+	Func. takes a number as input and calculates a value (size), which is going
+	to be used for memory allocation for the following functions:
+	- ft_itoa_hex()
+	- ft_itoa_ptr()
+	The size predetermines the length of the str. created in itoa conversion.
+	Divident value: 16
+*/
 size_t	ft_count_size_hex(unsigned long n)
 {	
 	int	size;
@@ -25,6 +33,13 @@ size_t	ft_count_size_hex(unsigned long n)
 	return (size);
 }
 
+/*
+	Conversion from unsigned long into hexadecimal values.
+	The values are stored in a string (usage of memory allocation).
+	The values can be upper -or lowercase, depending on the conversion spec.
+	--> HEX_BASE_LOWERCASE or HEX_BASE_UPPERCASE (defined in ft_printf.h)
+	Return value: pointer to the created string.
+*/
 char	*ft_itoa_hex(unsigned long n, t_mod *mods)
 {
 	char	*str;

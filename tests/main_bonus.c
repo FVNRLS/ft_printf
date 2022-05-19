@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 19:35:09 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:07:46 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,7 +338,7 @@ int main(void)
 
 	/**********************************************************************************/
 	/**********************************************************************************/
-									/* ADDITIONAL TESTS*/
+ 									/* ADDITIONAL TESTS*/
 	printf("\n\n\n\n------------ADDITIONAL MANDATORY TESTS------------\n");
 	{
 		
@@ -1316,17 +1316,18 @@ int main(void)
 		printf("Here the return of ft_printf: 	%d\n", ret1);
 		printf("Here the return of printf: 	%d\n", ret2);
 	}
-	
+
 	int ret1;
 	int	ret2;
 	
 	printf("\nSMALL TEST\n");
-	ret1 =ft_printf("%-7.5s", "tubular");
+	ret1 =ft_printf("%10.10s", "tubular");
 	printf("\n");
-	ret2 =printf("%-7.5s", "tubular");
+	ret2 =printf("%10.10s", "tubular");
 	printf("\n");
 	printf("Here the return of ft_printf: 	%d\n", ret1);
 	printf("Here the return of printf: 	%d\n", ret2);
-	
+
+
 	return (0);
 }

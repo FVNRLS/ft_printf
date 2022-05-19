@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:01:38 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 11:53:51 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:30:14 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
+	Conversion of a number to hexadecimal value.
+	Takes void*-formatted pointer address as input argument.
+	Input values are initially converted to unsigned long (via va_arg input).
+	Ajusts and applies mods. 
+	NULL-Pointers are represented with 0x0.
+*/
 void	ft_printptr(t_input *input, t_mod *mods)
 {
 	unsigned long	ptr;

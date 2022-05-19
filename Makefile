@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 17:29:32 by rmazurit          #+#    #+#              #
-#    Updated: 2022/05/18 12:01:17 by rmazurit         ###   ########.fr        #
+#    Updated: 2022/05/19 11:39:57 by rmazurit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRC 	= 		ft_printf.c 				\
 				./tools/ft_putstr.c			\
 				./tools/ft_print_pads.c		\
 				./tools/ft_itoa_dec.c		\
-				./tools/ft_arg_is_last.c	\
 				./tools/ft_itoa_ptr.c		\
 				./tools/ft_itoa_hex.c		\
 				./tools/ft_itoa_uint.c		\

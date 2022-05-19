@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:53:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/12 13:25:15 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:46:50 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-
+/*
+	Conversion a pointer address from unsigned long into hexadecimal values.
+	The values are stored in a string (usage of memory allocation).
+	The values are always represented in lowercase format
+	(usage of HEX_BASE_LOWERCASE).
+	Return value: pointer to the created string.
+*/
 char	*ft_itoa_ptr(unsigned long n)
 {
 	char	*str;

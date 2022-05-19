@@ -3,15 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_apply_prefix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:52:55 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 15:03:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:00:33 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
+void	ft_apply_signs(t_input *input, t_mod *mods)
+{
+	if (mods->space == 1)
+	{
+		write(1, " ", 1);
+		mods->space = 0;
+		input->ret_nbr++;
+	}
+	if (mods->plus == 1)
+	{
+		write(1, "+", 1);
+		mods->plus = 0;
+		input->ret_nbr++;
+	}
+	if (mods->is_negative == 1)
+	{
+		write(1, "-", 1);
+		mods->is_negative = 0;
+		input->ret_nbr++;
+	}
+}
+
+/*
+	Adds a prefix for conversion specs:		'x', 'X' and 'p'
+	Applies conversion mods:				' ', '-' and '+'
+*/
 void	ft_apply_prefix(t_input *input, t_mod *mods, char *str)
 {
 	if (mods->is_ptr == 1)
@@ -30,19 +56,5 @@ void	ft_apply_prefix(t_input *input, t_mod *mods, char *str)
 		input->ret_nbr += 2;
 		}
 	}
-	if (mods->space == 1)
-	{
-		write(1, " ", 1);
-		input->ret_nbr++;
-	}
-	if (mods->is_negative == 1)
-	{
-		write(1, "-", 1);
-		input->ret_nbr++;
-	}
-	if (mods->plus == 1 && mods->is_negative == 0)
-	{
-		write(1, "+", 1);
-		input->ret_nbr++;
-	}
+	ft_apply_signs(input, mods);
 }

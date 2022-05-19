@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testing_header.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:56:57 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/18 18:29:29 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:42:59 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@
 # include "../tools/ft_putstr.c"
 # include "../tools/ft_print_pads.c"
 # include "../tools/ft_itoa_dec.c"
-# include "../tools/ft_arg_is_last.c"
 # include "../tools/ft_itoa_ptr.c"
 # include "../tools/ft_itoa_hex.c"
 # include "../tools/ft_itoa_uint.c"
