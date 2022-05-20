@@ -6,7 +6,7 @@
 /*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/20 13:43:27 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:52:15 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1320,29 +1320,38 @@ int main(void)
 	int ret1;
 	int	ret2;
 	
+	// printf("\nSMALL TEST\n");
+	// ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf("\n");
+	// ret2 =printf(" %x %x %lx %lx %lx %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf("\n");
+	// printf("Here the return of ft_printf: 	%d\n", ret1);
+	// printf("Here the return of printf: 	%d\n", ret2);
+
+	// printf("\nSMALL TEST\n");
+	// ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf("\n");
+	// ret2 =printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf("\n");
+	// printf("Here the return of ft_printf: 	%d\n", ret1);
+	// printf("Here the return of printf: 	%d\n", ret2);
+	
+	// printf("\nSMALL TEST\n");
+	// ret1 =ft_printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
+	// printf("\n");
+	// ret2 =printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
+	// printf("\n");
+	// printf("Here the return of ft_printf: 	%d\n", ret1);
+	// printf("Here the return of printf: 	%d\n", ret2);
+	
 	printf("\nSMALL TEST\n");
-	ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ret1 =ft_printf("%10.1s", "21-school.ru");
 	printf("\n");
-	ret2 =printf(" %x %x %lx %lx %lx %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ret2 =printf("%10.1s", "21-school.ru");
 	printf("\n");
 	printf("Here the return of ft_printf: 	%d\n", ret1);
 	printf("Here the return of printf: 	%d\n", ret2);
 
-	printf("\nSMALL TEST\n");
-	ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf("\n");
-	ret2 =printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf("\n");
-	printf("Here the return of ft_printf: 	%d\n", ret1);
-	printf("Here the return of printf: 	%d\n", ret2);
-	
-	printf("\nSMALL TEST\n");
-	ret1 =ft_printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
-	printf("\n");
-	ret2 =printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
-	printf("\n");
-	printf("Here the return of ft_printf: 	%d\n", ret1);
-	printf("Here the return of printf: 	%d\n", ret2);
-	
+
 	return (0);
 }

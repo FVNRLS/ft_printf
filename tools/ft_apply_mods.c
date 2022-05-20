@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_apply_mods.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 19:35:03 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 16:28:06 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void	ft_ajust_pads(t_mod *mods, char *str, int len)
 	{
 		if (mods->minus == 1 && mods->prec_pads > mods->pads)
 			mods->prec_pads -= mods->pads;
-		else
+		else if (mods->prec_pads > len)
 			mods->prec_pads -= len;
+		else if (mods->prec_pads < len && mods->prec_pads > mods->pads)
+			mods->prec_pads -= mods->pads;
 	}
 	else if (mods->is_ptr == 1)
 		mods->pads -= (len + 2);
@@ -106,7 +108,7 @@ void	ft_apply_prec_mods(t_input *input, t_mod *mods, char *str)
 	to stdout.
 */
 void	ft_apply_noprec_mods(t_input *input, t_mod *mods, char *str)
-{
+{	
 	if (mods->minus == 1 && mods->prec == 0)
 	{	
 		ft_apply_prefix(input, mods, str);
