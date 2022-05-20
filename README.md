@@ -25,15 +25,13 @@ Following format modifiers are handled:
 - '0'				zero-padding of printed output.
 - '.'				precise output.
 
-**Combinations and exceptions for flags (format modifiers) and :**
+
+**Combinations and exceptions for flags (format modifiers):**
+
 
 A *format specifier* follows this prototype:
 
 %[flags][width][.precision][length]specifier
-
-**Combos to handle with format specifiers:**
-
-Non-digit —> VALID FLAGS:
 
 **%c:**
 
@@ -135,10 +133,10 @@ Digit:
 
 *flag '#' results in undefined behavior with 'u' conversion specifier*
 
-- [ ]  0-padding
-- [ ]  Field Width (123456789)
-- [ ]  ‘-’ sign
+- [x]   0-padding
+- [x]   Field Width (123456789)
+- [x]   ‘-’ sign
     - 0-padding is ignored
     - *Field Width → whitespaces are printed after the format spec. the form spec. stays left-adjusted*
-- [ ]  ‘ . ’ sign
+- [x]   ‘ . ’ sign
     - *puts 0 before the number (eg. if %.10d , then it will be 9 zeros and then the number) / if no number specified, then precision is 0*
