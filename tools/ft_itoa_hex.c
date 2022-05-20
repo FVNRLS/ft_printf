@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:09:17 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 19:27:48 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:59:24 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@
 	The size predetermines the length of the str. created in itoa conversion.
 	Divident value: 16
 */
-size_t	ft_count_size_hex(unsigned long n)
+size_t	ft_count_size_hex(unsigned long n, t_mod *mods)
 {	
 	int	size;
 
 	size = 0;
-	while (n != 0)
+	while (n > 0)
 	{
 		size++;
 		n /= 16;
 	}
+	if (size > 8 && mods->is_ptr == 0)
+		size = 8;
 	return (size);
 }
 
@@ -50,7 +52,7 @@ char	*ft_itoa_hex(unsigned long n, t_mod *mods)
 		hex_base = HEX_BASE_LOWERCASE;
 	else if (mods->spec == 'X')
 		hex_base = HEX_BASE_UPPERCASE;
-	size = ft_count_size_hex(n);
+	size = ft_count_size_hex(n, mods);
 	str = (malloc(sizeof(char) * (size + 1)));
 	if (!str)
 		return (NULL);

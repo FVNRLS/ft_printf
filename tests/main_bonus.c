@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:54:44 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 13:07:46 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:43:27 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1321,13 +1321,28 @@ int main(void)
 	int	ret2;
 	
 	printf("\nSMALL TEST\n");
-	ret1 =ft_printf("%10.10s", "tubular");
+	ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n");
-	ret2 =printf("%10.10s", "tubular");
+	ret2 =printf(" %x %x %lx %lx %lx %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n");
 	printf("Here the return of ft_printf: 	%d\n", ret1);
 	printf("Here the return of printf: 	%d\n", ret2);
 
-
+	printf("\nSMALL TEST\n");
+	ret1 =ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf("\n");
+	ret2 =printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf("\n");
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+	
+	printf("\nSMALL TEST\n");
+	ret1 =ft_printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
+	printf("\n");
+	ret2 =printf(" %x %x %x %x", INT_MAX, INT_MIN, 0, -42);
+	printf("\n");
+	printf("Here the return of ft_printf: 	%d\n", ret1);
+	printf("Here the return of printf: 	%d\n", ret2);
+	
 	return (0);
 }

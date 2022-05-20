@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/19 19:25:01 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:42:35 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void	ft_print_pads(t_input *input, t_mod *mods);
 void	ft_print_zeropads(t_input *input, t_mod *mods);
 void	ft_print_prec_pads(t_input *input, t_mod *mods);
 char	*ft_itoa_dec(int n);
-char	*ft_itoa_ptr(unsigned long n);
+char	*ft_itoa_ptr(unsigned long n, t_mod *mods);
 char	*ft_itoa_hex(unsigned long n, t_mod *mods);
 char	*ft_itoa_uint(unsigned int nbr);
-size_t	ft_count_size_hex(unsigned long n);
+size_t	ft_count_size_hex(unsigned long n, t_mod *mods);
 void	ft_apply_mods(t_input *input, t_mod *mods, char *str, int len);
 void	ft_apply_prefix(t_input *input, t_mod *mods, char *str);
 

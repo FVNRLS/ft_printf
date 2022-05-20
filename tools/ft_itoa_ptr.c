@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:53:11 by rmazurit          #+#    #+#             */
-/*   Updated: 2022/05/19 19:45:36 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:42:25 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 	(usage of HEX_BASE_LOWERCASE).
 	Return value: pointer to the created string.
 */
-char	*ft_itoa_ptr(unsigned long n)
+char	*ft_itoa_ptr(unsigned long n, t_mod *mods)
 {
 	char	*str;
 	size_t	size;
 
-	size = ft_count_size_hex(n);
+	size = ft_count_size_hex(n, mods);
 	if (n == 0)
 	{
 		str = (malloc(sizeof(char) * 2));
