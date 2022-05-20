@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:04:38 by hoomen            #+#    #+#             */
-/*   Updated: 2022/05/20 15:59:49 by rmazurit         ###   ########.fr       */
+/*   Updated: 2022/05/20 22:01:52 by rmazurit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include "ft_printf_bonus.h"
 
 # define FORM_SPECS			"cspdiouxX%%"
+# define ALL_SYMBOLS		"cspdiouxX%%#-+ .*0123456789"
+# define FORM_MODS			"#-+ .*0123456789"
 # define HEX_BASE_LOWERCASE	"0123456789abcdef"
 # define HEX_BASE_UPPERCASE	"0123456789ABCDEF"
 
