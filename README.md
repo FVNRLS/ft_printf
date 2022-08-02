@@ -1,7 +1,30 @@
 # ft_printf
-The function mimics the basic behavior of the C function printf().
 
-**Mandatory part:**
+
+<br>**About The Project**
+
+The function ft_printf mimics the basic behavior of the C function printf.<br>
+For reasons of simplification, bonus part was merged with mandatory.
+
+
+
+<br>**Prerequisites**
+
+Installed C compiler like gcc, cc or clang.
+
+
+<br>**Usage**
+
+_compile the function and include it as a library_:
+
+`gcc -[flags] -L./[library directory] -lftprintf -I./[includes directory]
+`
+<br><br>
+_you can use the function exactly like the conventional standard printf function:_
+[<br>https://man7.org/linux/man-pages/man3/printf.3.html
+]()
+<br>
+<br>**Mandatory part:**
 
 ft_printf() function handles the following format specifiers:  
 - %c Prints a single character. 
@@ -14,7 +37,7 @@ ft_printf() function handles the following format specifiers:
 - %X Prints a number in hexadecimal (base 16) uppercase format. 
 - %% Prints a percent sign.
 
-**Bonus part:**
+<br>**Bonus part:**
 
 Following format modifiers are handled:
 - '#'				hash-sign before %x or %X. 
@@ -26,13 +49,14 @@ Following format modifiers are handled:
 - '.'				precise output.
 
 
-**Combinations and exceptions for flags (format modifiers):**
+<br>**Combinations and exceptions for flags (format modifiers):**
 
 
 A *format specifier* follows this prototype:
 
-%[flags][width][.precision][length]specifier
+`% [flags] [width] [.precision] [length] specifier
 
+<br>`
 **%c:**
 
 *flag '0' results in undefined behavior with 'c' conversion specifier*
