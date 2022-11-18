@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:43:55 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/05/19 14:24:36 by rmazurit         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_apply_mods.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmazurit <rmazurit@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: rmazurit <rmazurit@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:39:33 by rmazurit          #+#    #+#             */
 /*   Updated: 2022/05/20 20:23:09 by rmazurit         ###   ########.fr       */
